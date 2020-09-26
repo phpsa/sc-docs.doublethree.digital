@@ -4,24 +4,12 @@
 
 @import "tailwindcss/utilities";
 
-#content {
-    p {
-        @apply mb-6;
-    }
+@import "prism.css";
 
-    h2 {
-        @apply font-semibold text-3xl mb-6;
-    }
+.prose code::before, .prose code::after {
+    content: ""!important;
+}
 
-    h3 {
-        @apply font-semibold text-2xl mb-6;
-    }
-
-    ul, ol {
-        @apply ml-4 list-disc;
-
-        li {
-            @apply mb-6;
-        }
-    }
+.prose p code {
+	@apply bg-gray-200 font-mono text-sm p-1;
 }
