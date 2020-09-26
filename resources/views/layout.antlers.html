@@ -8,6 +8,12 @@
         <!-- <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet"> -->
         <link rel="stylesheet" href="/css/site.css">
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+        {{ if app:env === 'production' }}
+            <!-- Fathom - beautiful, simple website analytics -->
+            <script src="https://bear.duncanm.dev/script.js" site="TZWWDRQY" defer></script>
+            <!-- / Fathom -->
+        {{ /if }}
     </head>
     <body>
         <div class="flex overflow-hidden h-screen">
