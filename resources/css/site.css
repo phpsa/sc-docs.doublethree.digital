@@ -1,0 +1,27 @@
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+#content {
+    p {
+        @apply mb-6;
+    }
+
+    h2 {
+        @apply font-semibold text-3xl mb-6;
+    }
+
+    h3 {
+        @apply font-semibold text-2xl mb-6;
+    }
+
+    ul, ol {
+        @apply ml-4 list-disc;
+
+        li {
+            @apply mb-6;
+        }
+    }
+}
