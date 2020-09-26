@@ -102,7 +102,7 @@ class Toc extends Modifier
             }
 
             $j = 0;
-            $toc .= '<li class="mb-1"><a id="anchor-'.$anchor.'" href="#'.$anchor.'">'.$title.'</a>';
+            $toc .= '<li class="mb-1"><a href="#'.$anchor.'">'.$title.'</a>';
             $prevlvl = $lvl;
 
             $i++;

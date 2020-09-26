@@ -24,8 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Markdown::addExtension(function () {
-            return new \Njed\Toc\Extensions\CommonMark\TitleAnchorIdExtension();
-        });
+        //
     }
 }
