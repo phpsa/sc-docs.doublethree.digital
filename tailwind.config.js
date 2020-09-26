@@ -13,6 +13,7 @@ module.exports = {
       extend: {
           colors: {
               'sc-dark-blue': '#041B34',
+              'sc-dark-light': '#00CDE0',
           },
           fontFamily: {
               'sc': ['Exo', ...defaultTheme.fontFamily.sans]
