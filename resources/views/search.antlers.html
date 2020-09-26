@@ -1,0 +1,12 @@
+<h1 class="mb-4 text-3xl font-bold font-sc">Search results: {{ get:q }}</h1>
+
+{{ search:results }}
+    {{ if no_results }}
+        <p>No results found for your query.</p>
+    {{ else }}
+        <a class="py-4 mb-4 border-b border-gray-200 block" href="{{ url }}">
+            <h2 class="font-sc text-lg font-bold">{{ title }}</h2>
+            <p>{{ content | noparse | strip_tags | safe_truncate:160:... }}</p>
+        </a>
+    {{ /if }}
+{{ /search:results }}
