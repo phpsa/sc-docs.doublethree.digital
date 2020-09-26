@@ -14,7 +14,31 @@
             <script src="https://bear.duncanm.dev/script.js" site="TZWWDRQY" defer></script>
             <!-- / Fathom -->
         {{ /if }}
-    </head>
+
+        <!-- Primary Meta Tags -->
+        <meta name="title" content="{{ title }} - {{ site:name }}">
+        <meta name="description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="{{ current_url }}">
+        <meta property="og:title" content="{{ title }} - {{ site:name }}">
+        <meta property="og:description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+        <meta property="og:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image">
+        <meta property="twitter:url" content="{{ current_url }}">
+        <meta property="twitter:title" content="{{ title }} - {{ site:name }}">
+        <meta property="twitter:description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+        <meta property="twitter:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+        <link rel="shortcut icon" href="/img/favicons/favicon.ico">
+        <meta name="theme-color" content="#041B34">
+</head>
     <body>
         <div class="flex overflow-hidden h-screen">
             <aside class="max-w-xs font-sc">
