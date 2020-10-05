@@ -21,3 +21,6 @@ tree:
     entry: 84b28c73-3a04-478f-9447-68df026c44fe
   -
     entry: 328fbb84-76c0-428d-a299-83801bf62814
+  -
+    title: 'API Documentation'
+    url: 'https://github.com/doublethreedigital/simple-commerce/wiki'
