@@ -54,7 +54,7 @@
                             <h2 class="mb-4 font-bold text-lg">Documentation</h2>
                             <nav class="flex flex-col">
                                 {{ nav:pages }}
-                                    {{ if slug === page:slug }}
+                                    {{ if is_current }}
                                         <div class="mb-2">
                                             <span class="mb-2 block font-medium">{{ title }}</span>
                                             <div class="pl-4 flex flex-col">
