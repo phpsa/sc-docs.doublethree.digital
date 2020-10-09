@@ -41,6 +41,23 @@ v2.1 added two new configuration values, `minimum_order_number` and `low_stock_t
     'low_stock_threshold' => 25,
 ```
 
+### Updated notifications config
+In order to extend Simple Commerce's notifications system to work with back-office notifications, we've updated the notifications config. Please review the changes and update your config file:
+
+```php
+'notifications' => [
+        'customer' => [
+            'order_confirmation' => true,
+        ],
+
+        'back_office' => [
+            'to' => 'staff@example.com',
+
+            'order_paid' => true,
+        ],
+],
+```
+
 ### Gateway Changes
 Instead of passing in arrays and request objects to various methods, Simple Commerce now has data transfer objects which will be passed into gateway methods. It's also expected that gateway methods will also return them.
 
