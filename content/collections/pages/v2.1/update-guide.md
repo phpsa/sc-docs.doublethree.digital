@@ -1,8 +1,7 @@
 ---
+title: 'Update Guide'
 id: c0af5012-07ae-4deb-b61d-1d4df22f43b4
 origin: 1322d92b-74f9-485b-977e-ce981ec83ddb
-title: 'Update Guide'
-published: false
 ---
 Every so often, there's a few breaking changes between updates of Simple Commerce. We aim to document those breaking changes here.
 
