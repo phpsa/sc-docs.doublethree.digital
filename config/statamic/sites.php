@@ -16,13 +16,13 @@ return [
     'sites' => [
 
         'v2.0' => [
-            'name' => config('app.name'),
+            'name' => 'v2.0',
             'locale' => 'en_US',
             'url' => '/v2.0/',
         ],
 
         'v2.1' => [
-            'name' => config('app.name'),
+            'name' => 'v2.1',
             'locale' => 'en_US',
             'url' => '/v2.1/',
         ],
