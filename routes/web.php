@@ -38,3 +38,6 @@ Statamic::booted(function () {
         ]);
     }
 });
+
+Route::redirect('/discord', 'https://discord.gg/U7xgtd5');
+Route::redirect('/github', 'https://github.com/doublethreedigital/simple-commerce');
