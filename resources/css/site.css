@@ -11,7 +11,22 @@
 }
 
 .prose p code {
-	@apply bg-gray-200 font-mono text-sm p-1;
+	@apply bg-gray-200 font-mono text-sm p-1 mx-5;
+}
+
+.prose ul {
+    list-style-image: url('/img/arrowhead-solid.svg');
+}
+
+.prose ul li {
+    @apply pl-2;
+}
+
+.prose ul li::before {
+    content: '';
+    position: inherit;
+    background: none;
+    border-radius: none;
 }
 
 [x-cloak] {

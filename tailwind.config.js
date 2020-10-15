@@ -4,7 +4,8 @@ module.exports = {
     purge: {
       content: [
         './resources/**/*.antlers.html',
-        './resources/**/*.blade.php',
+        './resources/**/*/*.antlers.html',
+        // './resources/**/*.blade.php',
         './content/**/*.md'
       ]
     },
