@@ -15,10 +15,17 @@ return [
 
     'sites' => [
 
-        'default' => [
-            'name' => config('app.name'),
+        // Newest version should be first in the array
+        'v2.1' => [
+            'name' => 'v2.1',
             'locale' => 'en_US',
-            'url' => '/',
+            'url' => '/v2.1/',
+        ],
+
+        'v2.0' => [
+            'name' => 'v2.0',
+            'locale' => 'en_US',
+            'url' => '/v2.0/',
         ],
 
     ],
