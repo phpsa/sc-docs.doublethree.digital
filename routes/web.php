@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Statamic\Facades\Site;
+use Statamic\Statamic;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::statamic('search', 'search');
-
 Route::name('current_release_redirects')->group(function () {
-	$currentSite = \Statamic\Facades\Site::get('v2.1');
+	$currentSite = Site::get('v2.1');
 
 	Route::redirect('/', $currentSite->url());
 	Route::redirect('/installation', $currentSite->url().'/installation');
@@ -28,4 +28,13 @@ Route::name('current_release_redirects')->group(function () {
 	Route::redirect('/how-it-works', $currentSite->url().'/how-it-works');
 	Route::redirect('/knowledge-base/version-control-strategies', $currentSite->url().'/knowledge-base/version-control-strategies');
 	Route::redirect('/extending', $currentSite->url().'/how-it-works');
+});
+
+Statamic::booted(function () {
+    foreach (Site::all() as $site) {
+        Route::statamic($site->url().'/search', 'search', [
+            'title' => 'Search results',
+            'site' => $site,
+        ]);
+    }
 });
