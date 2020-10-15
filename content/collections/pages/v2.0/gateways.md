@@ -1,5 +1,6 @@
 ---
 title: Gateways
+intro: 'Simple Commerce has first-party support for popular payment gateways like Stripe and Mollie. You can also build your own gateway, if needed.'
 id: 55b09797-572a-483b-b5af-9d277c1744c6
 ---
 Simple Commerce ~~has~~ will have built-in support for popular payment gateways, like Stripe. However, if we don't support your gateway of choice, it's easy enough to build one yourself.

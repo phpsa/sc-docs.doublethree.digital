@@ -11,18 +11,18 @@ sections:
           validate:
             - required
       -
-        handle: content
-        field:
-          type: markdown
-          display: Content
-          localizable: true
-      -
         handle: intro
         field:
           display: Intro
           type: textarea
           icon: textarea
           listable: hidden
+      -
+        handle: content
+        field:
+          type: markdown
+          display: Content
+          localizable: true
   sidebar:
     display: Sidebar
     fields:

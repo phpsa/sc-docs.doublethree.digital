@@ -1,10 +1,8 @@
 ---
 title: 'How it works'
-origin: 84b28c73-3a04-478f-9447-68df026c44fe
 id: 57d6baa6-8e5d-4fd2-bc40-56735f38f306
+origin: 84b28c73-3a04-478f-9447-68df026c44fe
 ---
-Before getting started with your first Simple Commerce store, it's helpful to understand a bit of how it works under the hood.
-
 ## Content
 Under the hood all of your products, orders and coupons are just normal Statamic collections and entries. Meaning that you can use them the same way as you can any of your other bits of contents.
 

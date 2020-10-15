@@ -1,5 +1,6 @@
 ---
 title: Installation
+intro: 'It''s as easy as 1, 2, 3, a, b, c. Seriously though, only three install steps, it''s mad.'
 id: fe33ff01-b30c-45e7-8537-017f34a6c09d
 ---
 ## Requirements

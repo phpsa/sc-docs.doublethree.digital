@@ -1,10 +1,9 @@
 ---
 title: Configuring
+intro: 'Simple Commerce provides a configuration file out of the box, to help you configure your store.'
 id: 74427f4f-8485-4ee9-a0ec-a729a78e59a5
 ---
-To allow for Simple Commerce to be flexible, it gives you some configuration options so you can decide how you want to run your store.
-
-You can find your Simple Commerce config file in `config/simple-commerce.php` in your project.
+During addon installation, a `config/simple-commerce.php` is published in your project. This is the file where your Simple Commerce configuration lives.
 
 ## Site configuration
 Statamic has a concept of sites. Each Statamic instance can have one or more sites. For each of those sites you can use a different currency, a different tax configuration and different shipping methods.

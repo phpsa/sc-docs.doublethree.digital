@@ -1,24 +1,29 @@
 ---
 title: 'About Simple Commerce'
-origin: home
 id: ce8337dc-8a1f-4caa-b99c-b67215c00149
+origin: home
 ---
-Simple Commerce is a perfectly simple e-commerce solution for Statamic. It allows you to enjoy the benefits of flat-files while giving you the power you need to power small-medium sized e-commerce websites.
+We built Simple Commerce to feel as native as possible to Statamic. We've adopted everything from the flat file approach to not being opinionated over what your front-end looks like.
 
-**Everything's just an entry.** Literally everything from your products to your orders and coupons are just entries sitting in collections.
+**But why flat files?** Because they're awesome! Besides the fact that you can [version control them](/knowledge-base/version-control-strategies), it's also a big plus for security as there's no way for hackers to use MySQL Injection to fetch important data from your system.
 
-**Full power of the front-end.** You're not glued to a set of predefined templates or a certain JavaScript framework, use whatever you need to make your site unique.
+**And by the way, you have full control over content modeling!** You heard it right, basically the only requirement you need if to have a price field on your products and you're all set. 
 
-**Support for popular gateways.** Out of the box, Simple Commerce has support for some of the popular online payment gateways, including Stripe.
+**Simple Commerce also has first-party support for popular gateways...** Right now, Stripe and Mollie are officially supported. If you need one that we don't support, it's easy to build your own gateway.
 
-**Full control over the blueprints.** Apart from a title and a price, you can add whatever you'd like to your product blueprint. Same goes for other blueprints. We don't want to invade on your happy developer experience.
+[Learn more about how it works under the hood](/under-the-hood)
 
 ## Limitations
-Simple Commerce is pretty lightweight, meaning it doesn't have as much functionality as something like Shopify or WooCommerce. So there's a few limitations it has compared to other solutions.
+Simple Commerce is pretty lightweight (hence the name). This means it doesn't have as much functionality as likes of Shopify or Craft Commerce.
 
-* Simple Commerce doesn't currently support the concept of variants or product additions. It's something we might look at implementing later but we don't have it right now.
-* It doesn't support multiple tax rates, everything in your store is stuck to the single tax rate.
-* We don't support the ability to create complex shipping rules. All we have are [shipping methods](./shipping).
+* No support for multiple tax rates - at the moment, you can only assign a single tax rate per site.
 
-## Licensing
-Simple Commerce is a commercial addon. To use it in production, you'll need to purchase a license from the [Statamic Marketplace](https://statamic.com/addons/double-three-digital/simple-commerce), which costs a one-time fee of $199.
+* No first party shipping methods, you have to [create your own](/shipping) per store.
+
+* No reporting functionality (we have it on our roadmap for the future though!)
+
+## Licensing and Support
+
+To use Simple Commerce in a production environment, you'll need to [buy a license from the Statamic Marketplace](https://statamic.com/addons/double-three-digital/simple-commerce).
+
+For official support, email [addons@doublethree.digital](mailto:addons@doublethree.digital). There's also [a Discord server](/discord), filled with community members.

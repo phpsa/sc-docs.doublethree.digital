@@ -1,5 +1,6 @@
 ---
 title: Email
+intro: 'Simple Commerce can be configured to send emails to customers and back-office staff when order''s have been paid for, etc.'
 id: 22499319-3c9f-4546-b792-4054d47d57fd
 ---
 By default, Simple Commmerce will automatically send emails to your customers when certain events happen. For example, Simple Commerce will send your customers an order confirmation email when a purchase has been completed.
