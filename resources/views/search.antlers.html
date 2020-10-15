@@ -1,12 +1,18 @@
-<h1 class="mb-4 text-3xl font-bold font-sc">Search results: {{ get:q }}</h1>
+<div class="mx-auto mb-4" style="max-width: 65ch;">
+    <h1 class="text-3xl font-bold font-sc mb-2">Search results: {{ get:q }}</h1>
+</div>
 
-{{ search:results }}
-    {{ if no_results }}
-        <p>No results found for your query.</p>
-    {{ else }}
-        <a class="py-4 mb-4 border-b border-gray-200 block" href="{{ url }}">
-            <h2 class="font-sc text-lg font-bold">{{ title }}</h2>
-            <p>{{ content | noparse | strip_tags | safe_truncate:160:... }}</p>
-        </a>
-    {{ /if }}
-{{ /search:results }}
+<div class="border border-gray-200 mx-auto my-4" style="max-width: 65ch;"></div>
+
+<div class="mx-auto" style="max-width: 65ch;">
+    {{ search:results }}
+        {{ if no_results }}
+            <p>No results found for your query.</p>
+        {{ else }}
+            <a class="py-4 mb-4 border-b border-gray-200 block" href="{{ url }}">
+                <h2 class="font-sc text-lg font-bold mb-1">{{ title }}</h2>
+                <p>{{ intro ?? content | noparse | strip_tags | safe_truncate:160:... }}</p>
+            </a>
+        {{ /if }}
+    {{ /search:results }}
+</div>
