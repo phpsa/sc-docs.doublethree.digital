@@ -13,3 +13,7 @@
 .prose p code {
 	@apply bg-gray-200 font-mono text-sm p-1;
 }
+
+[x-cloak] {
+    @apply hidden;
+}
