@@ -1,7 +1,7 @@
 ---
 title: Extending
-origin: 8808e103-8b01-45c9-8612-334c3a471558
 id: fbbabc6e-90e3-4eb8-a8a8-cadce1c3d047
+origin: 8808e103-8b01-45c9-8612-334c3a471558
 ---
 Simple Commerce provides a collection of API methods that developers can hook into to extend Simple Commerce.
 
@@ -21,7 +21,7 @@ return Customer::findByEmail('duncan@example.com');
 The repositories provided by Simple Commerce automatically works with Statamic's collections and entry system but say for example, you wanted to store customers in a database instead. You could write your own Customer Repository, implementing all of the same methods as the default one and you could switch to yours instead by adding this to your service provider.
 
 ```php
-$this->app->bind(DoubleThreeDigital\SimpleCommerce\Contracts\CustomerRepository::class, Your\Package\Repositories\CustomerRepository::class);
+\Statamic\Statamic::repository(DoubleThreeDigital\SimpleCommerce\Contracts\CustomerRepository::class, App\Repositories\CustomerRepository::class);
 ```
 
 ## Events
