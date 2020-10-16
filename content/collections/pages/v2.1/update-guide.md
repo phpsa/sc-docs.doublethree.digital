@@ -9,7 +9,7 @@ origin: 1322d92b-74f9-485b-977e-ce981ec83ddb
 composer update doublethreedigital/simple-commerce:^2.1
 ```
 
-### New Configuration Values
+### New Configuration Values (Breaking)
 v2.1 added two new configuration values, `minimum_order_number` and `low_stock_threshold`. It's recommended to add these to your `config/simple-commerce.php` file...
 
 ```php
@@ -39,24 +39,24 @@ v2.1 added two new configuration values, `minimum_order_number` and `low_stock_t
     'low_stock_threshold' => 25,
 ```
 
-### Updated notifications config
+### Updated notifications config (Breaking)
 In order to extend Simple Commerce's notifications system to work with back-office notifications, we've updated the notifications config. Please review the changes and update your config file:
 
 ```php
 'notifications' => [
-        'customer' => [
-            'order_confirmation' => true,
-        ],
+    'customer' => [
+        'order_confirmation' => true,
+    ],
 
-        'back_office' => [
-            'to' => 'staff@example.com',
+    'back_office' => [
+        'to' => 'staff@example.com',
 
-            'order_paid' => true,
-        ],
+        'order_paid' => true,
+    ],
 ],
 ```
 
-### Gateway Changes
+### Gateway Changes (breaking)
 Instead of passing in arrays and request objects to various methods, Simple Commerce now has data transfer objects which will be passed into gateway methods. It's also expected that gateway methods will also return them.
 
 Below is the updated gateway interface. Review your gateway for any changes:
@@ -92,7 +92,7 @@ interface Gateway
 
 As well as changes to the methods, remember to add in the new `webhook` method and extend your gateway class from the `BaseGateway` for access to helper methods.
 
-### Shipping Method Updates
+### Shipping Method Updates (breaking)
 Shipping Method's haven't been updated hugely, it's just a small change to some of the method signatures. Review your shipping method against the Shipping Method interface:
 
 ```
@@ -121,3 +121,9 @@ If you published the Simple Commerce translations and views in v2.0, we recommen
 ```
 php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\ServiceProvider"
 ```
+
+## API Changes 
+The namespaces of some of the API classes have been changes. If you're referencing them anywhere in your code, please review this list and change them.
+
+* `DoubleThreeDigital\SimpleCommerce\Countries` -> `DoubleThreeDigital\SimpleCommerce\Data\Countries`
+* `DoubleThreeDigital\SimpleCommerce\Currencies` -> `DoubleThreeDigital\SimpleCommerce\Data\Currencies`
