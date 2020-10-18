@@ -1,7 +1,7 @@
 ---
 title: Shipping
-origin: cca48c13-5085-4c70-be0a-2dd82c7849a5
 id: fbc6a6b8-7aca-4e75-969b-901259294382
+origin: cca48c13-5085-4c70-be0a-2dd82c7849a5
 ---
 If you're selling physical products on your store, you'll need a way to ship those products to your customers. Thankfully, Simple Commerce has an easy way to create custom shipping methods for your store.
 
@@ -23,6 +23,7 @@ That command will create a Shipping Method class in your `app\ShippingMethods` f
 namespace App\ShippingMethods;
 
 use DoubleThreeDigital\SimpleCommerce\Contracts\ShippingMethod;
+use DoubleThreeDigital\SimpleCommerce\Data\Address;
 use Statamic\Entries\Entry;
 
 class FirstClass implements ShippingMethod
@@ -42,7 +43,7 @@ class FirstClass implements ShippingMethod
         return 0;
     }
 
-    public function checkAvailability(array $address): bool
+    public function checkAvailability(Address $address): bool
     {
         return true;
     }
@@ -54,7 +55,7 @@ Here's a quick explanation of what each method does.
 * **name:** Should return the name of your shipping method (will be shown to customers)
 * **description:** Should return a description for your shipping method
 * **calculateCost:** This method should be where you return the cost of the shipping, based on the order's entry data.
-* **checkAvailability:** This method is where an address array is passed in and you should return a boolean of whether or not you ship to that location.
+* **checkAvailability:** This method is where an Address object is passed in and you should return a boolean of whether or not you ship to that location.
 
 ## Configuration
 
