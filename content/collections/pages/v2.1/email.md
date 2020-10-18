@@ -1,33 +1,43 @@
 ---
 title: Email
-origin: 22499319-3c9f-4546-b792-4054d47d57fd
 id: 7dd95ad0-ce01-4d53-a31c-a253ecb44bb0
+origin: 22499319-3c9f-4546-b792-4054d47d57fd
 ---
 By default, Simple Commmerce will automatically send emails to your customers when certain events happen. For example, Simple Commerce will send your customers an order confirmation email when a purchase has been completed.
 
 ## Configuration
 
 ```php
-<?php
-
 /*
-|--------------------------------------------------------------------------
-| Notifications
-|--------------------------------------------------------------------------
-|
-| Simple Commerce can automatically send notifications to customers after
-| events occur in your store. eg. a cart being completed.
-|
-| Here's where you can toggle if certain notifications are enabled/disabled.
-|
+ |--------------------------------------------------------------------------
+ | Notifications
+ |--------------------------------------------------------------------------
+ |
+ | Simple Commerce can automatically send notifications after events occur in your store.
+ | eg. a cart being completed.
+ |
+ | Here's where you can toggle if certain notifications are enabled/disabled.
+ |
 */
 
 'notifications' => [
-    'cart_confirmation' => true,
+  'customer' => [
+    'order_confirmation' => true,
+  ],
+
+  'back_office' => [
+    'to' => 'staff@example.com',
+
+    'order_paid' => true,
+  ],
 ],
 ```
 
 In your Simple Commerce config (`config/simple-commerce.php`), you can toggle notifications on or off, depending on your preference. For example, you may not want Simple Commerce to send an order confirmation email because Stripe might send one to the customer instead.
+
+## Back-office notifications
+
+You can also send notifications to your store's back-office staff. To configure the email where those notifications go, change the `to` value. Currently it only supports sending to a single e-mail address.
 
 ## Customising email views
 
