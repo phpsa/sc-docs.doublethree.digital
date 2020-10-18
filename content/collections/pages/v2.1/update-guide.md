@@ -5,6 +5,8 @@ origin: 1322d92b-74f9-485b-977e-ce981ec83ddb
 ---
 ## Updating from v2.0 to v2.1
 
+We've tried to document as many of the breaking changes as we can. Although, if you have any custom integrations into Simple Commerce, we'd recommend that you [review the changes](https://github.com/doublethreedigital/simple-commerce/compare/master...v2.1-dev).
+
 ```
 composer update doublethreedigital/simple-commerce:^2.1
 ```
