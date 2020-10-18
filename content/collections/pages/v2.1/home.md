@@ -17,9 +17,7 @@ We built Simple Commerce to feel as native as possible to Statamic. We've adopte
 Simple Commerce is pretty lightweight (hence the name). This means it doesn't have as much functionality as likes of Shopify or Craft Commerce.
 
 * No support for multiple tax rates - at the moment, you can only assign a single tax rate per site.
-
 * No first party shipping methods, you have to [create your own](/shipping) per store.
-
 * No reporting functionality (we have it on our roadmap for the future though!)
 
 ## Licensing and Support
