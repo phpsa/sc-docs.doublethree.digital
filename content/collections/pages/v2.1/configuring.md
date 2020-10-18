@@ -80,25 +80,33 @@ To add a gateway, just add the gateway's class name (`DummyGateway::class` synta
 ## Notifications
 ```php
 /*
-|--------------------------------------------------------------------------
-| Notifications
-|--------------------------------------------------------------------------
-|
-| Simple Commerce can automatically send notifications to customers after
-| events occur in your store. eg. a cart being completed.
-|
-| Here's where you can toggle if certain notifications are enabled/disabled.
-|
+ |--------------------------------------------------------------------------
+ | Notifications
+ |--------------------------------------------------------------------------
+ |
+ | Simple Commerce can automatically send notifications after events occur in your store.
+ | eg. a cart being completed.
+ |
+ | Here's where you can toggle if certain notifications are enabled/disabled.
+ |
 */
 
 'notifications' => [
-    'cart_confirmation' => true,
+  'customer' => [
+    'order_confirmation' => true,
+  ],
+
+  'back_office' => [
+    'to' => 'staff@example.com',
+
+    'order_paid' => true,
+  ],
 ],
 ```
 
-Simple Commerce can be configured to automatically send emails to your customers when certain events happen. For example, an order confirmation email when an order has been completed.
+Simple Commerce can be configured to send emails to your customers and back-office staff when certain events happen, like when an order has been completed.
 
-We've written a bit more about Notification configuration [over here](/simple-commerce/email).
+You can read more about Notifications [over here](/simple-commerce/email)
 
 ## Collections & Taxonomies
 ```php
@@ -141,3 +149,5 @@ For example, to use a collection called `Discounts`, with a handle of `discounts
 There's a few smaller configuration options too. We've documented them in some bullet points below.
 
 * `cart_key` will determine the session key used for a customers' cart.
+* `minimum_order_number` allows you to set the minimum for order numbers to start at. By default it is `2000`, so order title's will be `#2000`, `#2001`, etc
+* `low_stock_threshold` allows you to determine the threshold at which you'd like to be notified about stock running low for your products.
