@@ -140,7 +140,7 @@ For example: `{{ gateway-config:key }}` fetches the `key` property from the gate
 
 If you want to give the customer a choice of how they want to pay (bank transfer or credit card, for example), you can offer the customer a choice of payment methods by looping through the `{{ sc:gateways }}` tag.
 
-In the below example, we're using Alpine.js to react to the value of the `<select>` element. We're also seperating the different payment forms into their own partials.
+In the below example, we're using Alpine.js to react to the value of the `<select>` element. We'd also recommend splitting the payment forms into their own partials.
 
 ```
 <div x-data="{ gateway: '{{ sc:gateways }}{{ if first }}{{ formatted_class }}{{ /if }}{{ /sc:gateways }}' }">
@@ -157,8 +157,8 @@ In the below example, we're using Alpine.js to react to the value of the `<selec
 	</select>
     
     {{ sc:gateways }}
-		<div class="mb-6" x-show="gateway === '{{ formatted_class }}'">
-			{{ partial src="gateways/{ handle }" }}
+		<div x-show="gateway === '{{ formatted_class }}'">
+			<!-- Payment form partial -->
 		</div>
 	{{ /sc:gateways }}
     
