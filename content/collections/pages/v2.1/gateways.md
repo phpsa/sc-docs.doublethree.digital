@@ -1,15 +1,17 @@
 ---
 title: Gateways
-origin: 55b09797-572a-483b-b5af-9d277c1744c6
 id: b26a3fb4-9c34-4e6c-ae7d-b0e3efbc5f2e
+origin: 55b09797-572a-483b-b5af-9d277c1744c6
 ---
-Simple Commerce ~~has~~ will have built-in support for popular payment gateways, like Stripe. However, if we don't support your gateway of choice, it's easy enough to build one yourself.
+Simple Commerce has built-in support for popular payment gateways, including Stripe and Mollie.
+
+And if you need a gateway that we don't already support, it's easy enough to build your own.
 
 ## Configuration
 
 Gateways are configured in your `config/simple-commerce.php` file. Like so:
 
-```
+```php
 'gateways' => [
     \DoubleThreeDigital\SimpleCommerce\Gateways\DummyGateway::class => [],
 ],
@@ -22,83 +24,164 @@ The array key is the gateway class and the key should contain an array of settin
 Here's the list of popular payment gateways that Simple Commerce supports out of the box.
 
 * Stripe (recommended)
+* Mollie
 * More coming soon!
 
-### Dummy Gateway
+### Dummy
 
-We provide a dummy gateway which can be helpful for testing/prototyping, before you've decided on a particular gateway. When using the dummy gateway, all payments will be returned as successful, unless you use the card number `1212 1212 1212 1212`, where the payment will fail.
+In the case when you're building out your checkout process and you haven't decided on a payment processor or you're just playing around with Simple Commerce and don't want to setup a 'real' payment gateway, the dummy one can come in useful.
 
-We include an example of the payment form for the Dummy gateway in the [Simple Commerce starter kit](https://github.com/doublethreedigital/simple-commerce-starter).
+You can enter any credit card number, any cvv and any expiry and the card will always return successful.
 
-### Stripe Gateway
+### Stripe
 
-Stripe is the gateway we recommend, mostly because its modern and easy to use for both merchants and customers. To use the Stripe gateway in your store, add the Stripe class, followed by your Stripe API details as settings.
+To get started, add the Stripe gateway to your gateway configuration:
 
-```
+```php
 'gateways' => [
-        \DoubleThreeDigital\SimpleCommerce\Gateways\StripeGateway::class => [
-            'key' => env('STRIPE_KEY'),
-            'secret' => env('STRIPE_SECRET'),
-        ],
+	\DoubleThreeDigital\SimpleCommerce\Gateways\StripeGateway::class => [
+    	'key' => env('STRIPE_KEY'),
+        'secret' => env('STRIPE_SECRET'),
+    ],
 ],
 ```
 
-We would highly recommend making use of [environment variables](https://statamic.dev/configuration#environment-variables) to store your Stripe API details so they don't get leaked in version control (even if it's private).
+> **🔥 Hot Tip:** Use [environment variables](https://statamic.dev/configuration#environment-variables) for the API Key and Secret so they're never committed to version control.
 
-We include an example of the payment form for the Stripe gateway in the [Simple Commerce starter kit](https://github.com/doublethreedigital/simple-commerce-starter).
+You can see an example payment form using Stripe Elements, in the [Simple Commerce Starter Kit](https://github.com/doublethreedigital/sc-starter-kit/blob/master/resources/views/checkout/gateways/_stripe.antlers.html).
 
-## Build your own gateway
+### Mollie
 
-Sometimes you'll want to use a gateway that Simple Commerce doesn't provide out of the box. In that case, you'll need to make your own gateway.
+To get started, add the Mollie gateway to your gateway configuration:
 
-1. Create a gateway from a stub, you can copy over the stub by running `php please make:gateway {gateway name}`. The gateway will be created in your `App\Gateways` folder.
-
-```
-<?php
-
-namespace App\Gateways;
-
-use DoubleThreeDigital\SimpleCommerce\Contracts\Gateway;
-
-class SuperCoolGateway implements Gateway
-{
-    public function name(): string
-    {
-        return 'Super Cool';
-    }
-
-    public function prepare(array $data): array
-    {
-        return [];
-    }
-
-    public function purchase(array $data): array
-    {
-        return [];
-    }
-
-    public function purchaseRules(): array
-    {
-        return [];
-    }
-
-    public function getCharge(array $data): array
-    {
-        return [];
-    }
-
-    public function refundCharge(array $data): array
-    {
-        return [];
-    }
-}
+```php
+'gateways' => [
+	\DoubleThreeDigital\SimpleCommerce\Gateways\MollieGateway::class => [
+    	'key' => env('MOLLIE_KEY'),
+        'profile' => env('MOLLIE_PROFILE'),
+    ],
+],
 ```
 
-2. Now all you need to do is fill in the blank methods to make them work for your gateway. Here's a quick overview of what each of the methods do:
+> **🔥 Hot Tip:** Use [environment variables](https://statamic.dev/configuration#environment-variables) for the API Key and Profile so they're never committed to version control.
 
-* **name** - This method should return the name of your gateway. It's recommended this name should be recognisable.
-* **prepare** - This method is called while loading the `sc:checkout` form. If you need to, you can return an array of stuff which will be available as variables inside the form.
-* **purchase** - This method is called when the customer submits the `sc:checkout` form. `$data` will be everything sent to the checkout form. This is where you'll want to confirm the purchase.
-* **purchaseRules** - This method should return an array of [validation rules](https://laravel.com/docs/7.x/validation#available-validation-rules) which will be used to make sure the request contains everything it needs to hit the `purchase` method later on.
-* **getCharge** - This method will be hit anytime Simple Commerce needs to get gateway information.
-* **refundCharge** - This method will be hit whenever a refund should happen. `$data` will be an array of the order's entry data.
+Another thing you'll need to do is setup a webhook inside Mollie's Dashboard. This is how Mollie's system will communicate with Simple Commerce. The webhook URL is: `yourdomain.com/!/simple-commerce/gateways/mollie/webhook`.
+
+Because of Mollie being a complete off-site gateway, no payment form is provided. Instead, you'll need to redirect users to Mollie's hosted checkout page where the customer can complete the payment process. After they pay, they will be redirected back to your site.
+
+You can learn more about off-site gateways below.
+
+### Custom Gateway
+
+There are often cases where you'll need to use a gateway that Simple Commerce doesn't provide out of the box. In those cases, you will need to build your own:
+
+1. Run `php please make:gateway {gateway}`, obviously replacing `{gateway}` with the name of your gateway. The gateway will be created in `App\Gateways`.
+
+2. Fill in the blanks! Review each of the methods, filling in the ones you need. Here's a quick breakdown of each of the methods.
+
+* `name()` - should return the name of your gateway
+* `prepare()` - should be used to either: generate tokens used later on for displaying the payment form or generating an off-site checkout link.
+* `purchase()` - should be used to do the actual purchase (aka. taking the money from the customer)
+* `purchaseRules` - should return [Laravel Validation Rules](https://laravel.com/docs/master/validation#available-validation-rules) for the checkout request.
+* `getCharge()` - should get information about a specific order's charge/transaction.
+* `refundCharge()` - should refund an order
+* `webhook()` - should accept incoming webhook payloads, used for off-site payment gateways.
+
+## Templating
+
+### On-site gateways
+
+On-site gateways is where the customer is kept on the store's website to enter their payment information, Stripe is the primary on-site gateway we support.
+
+Usually, the payment form would be on the last step in your checkout flow, inside the `{{ sc:checkout }}` tag. Make sure to provide the gateway being used in the checkout form.
+
+The implementation of on-site gateways vary depending on the gateway. However, we've provided a bare-bones example below, showing usage with the built-in Stripe gateway.
+
+```html
+<div>
+    <label for="card-element">Card Details</label>
+    <div id="card-element"></div>
+</div>
+
+<input id="stripePaymentMethod" type="hidden" name="payment_method">
+<input type="hidden" name="gateway" value="DoubleThreeDigital\SimpleCommerce\Gateways\StripeGateway">
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+    var stripe = Stripe('{{ gateway-config:key }}')
+    var elements = stripe.elements()
+
+    const card = elements.create('card')
+    card.mount('#card-element')
+
+    card.addEventListener('change', ({error}) => {
+        // Deal with errors
+    })
+
+    function confirmPayment() {
+        stripe.confirmCardPayment('{{ client_secret }}', {
+            payment_method: { card: card },
+        }).then(function (result) {
+          	if (result.paymentIntent.status === 'succeeded') {
+            	document.getElementById('stripePaymentMethod').value = result.paymentIntent.payment_method
+            } else if (result.error) {
+             	// Deal with errors 
+            }
+        })
+    }
+</script>
+```
+
+Inside checkout forms, you can access the gateway's configuration options and anything it returns in it's `prepare` method. 
+
+For example: `{{ gateway-config:key }}` fetches the `key` property from the gateway's config. And the `{{ client_secret }}` is returned from the Stripe Gateway during it's `prepare` method.
+
+#### Multiple on-site gateways
+
+If you want to give the customer a choice of how they want to pay (bank transfer or credit card, for example), you can offer the customer a choice of payment methods by looping through the `{{ sc:gateways }}` tag.
+
+In the below example, we're using Alpine.js to react to the value of the `<select>` element. We're also seperating the different payment forms into their own partials.
+
+```
+<div x-data="{ gateway: '{{ sc:gateways }}{{ if first }}{{ formatted_class }}{{ /if }}{{ /sc:gateways }}' }">
+	<h2>Secure Payment</h2>
+
+	<select 
+    	x-model="gateway" 
+        class="h-10 w-full border rounded p-2 mb-2 outline-none mr-2" 
+        name="gateway"
+    >
+		{{ sc:gateways }}
+			<option value="{{ class }}">{{ name }}</option>
+		{{ /sc:gateways }}
+	</select>
+    
+    {{ sc:gateways }}
+		<div class="mb-6" x-show="gateway === '{{ formatted_class }}'">
+			{{ partial src="gateways/{ handle }" }}
+		</div>
+	{{ /sc:gateways }}
+    
+    <button 
+    	type="button"
+        @click.prevent="if(typeof confirmPayment == 'function' && document.getElementsByName('gateway')[0].value == 'DoubleThreeDigital\\SimpleCommerce\\Gateways\\StripeGateway') { confirmPayment(); } else { document.querySelector('form').submit() }">
+        Complete Checkout
+	</button>
+</div>
+```
+
+### Off-site gateways
+
+Off-site gateways are where the customer is redirected away from the store's website to a payment processor. Mollie is the off-site gateway built in with Simple Commerce.
+
+When you want to use an off-site gateway, you can't use the standard `{{ sc:checkout }}` tag as the customer needs to be redirected elsewhere to complete the checkout process.
+
+Below is an example of the off-site gateway checkout tag for Mollie. You can obviously change the gateway name and the redirect to work for you.
+
+```
+{{ sc:checkout:mollie redirect="/thanks" }}
+```
+
+After the customer completes payment on the off-site gateway they will be redirected back to your store's site. Either to the redirect URL provided or to your store's homepage. 
+
+Behind the scenes, the customer's payment confirmation will be sent via webhooks to your gateway.
