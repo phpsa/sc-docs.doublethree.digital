@@ -23,9 +23,8 @@ The array key is the gateway class and the key should contain an array of settin
 
 Here's the list of popular payment gateways that Simple Commerce supports out of the box.
 
-* Stripe (recommended)
+* Stripe
 * Mollie
-* More coming soon!
 
 ### Dummy
 
