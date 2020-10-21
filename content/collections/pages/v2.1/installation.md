@@ -1,7 +1,7 @@
 ---
 title: Installation
-origin: fe33ff01-b30c-45e7-8537-017f34a6c09d
 id: 5f2341fc-ba8c-4530-b7a6-3abfa1b09be4
+origin: fe33ff01-b30c-45e7-8537-017f34a6c09d
 ---
 ## Requirements
 Simple Commerce has a few requiements:
@@ -32,7 +32,7 @@ php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\Service
 php please simple-commerce:setup-content
 ```
 
-4. Get Started!
+4. **Job Done!**
 
 ## Quick Start
 If you'd prefer to get started with some boilerplate views and Simple Commerce already installed, you should checkout our the [Simple Commerce Starter Kit](https://github.com/doublethreedigital/simple-commerce-starter).
