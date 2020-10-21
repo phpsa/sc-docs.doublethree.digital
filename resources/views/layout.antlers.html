@@ -22,15 +22,15 @@
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ current_url }}">
-        <meta property="og:title" content="{{ title }} - Simple Commerce Documentation">
-        <meta property="og:description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+        <meta property="og:title" content="{{ seo_title ?? title }} - Simple Commerce Documentation">
+        <meta property="og:description" content="{{ seo_description ?? content | noparse | strip_tags | safe_truncate:200:... }}">
         <meta property="og:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="{{ current_url }}">
-        <meta property="twitter:title" content="{{ title }} - Simple Commerce Documentation">
-        <meta property="twitter:description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+        <meta property="twitter:title" content="{{ seo_title ?? title }} - Simple Commerce Documentation">
+        <meta property="twitter:description" content="{{ seo_description ?? content | noparse | strip_tags | safe_truncate:200:... }}">
         <meta property="twitter:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
