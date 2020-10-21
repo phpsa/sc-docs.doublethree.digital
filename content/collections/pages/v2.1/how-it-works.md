@@ -3,6 +3,8 @@ title: 'How it works'
 id: 57d6baa6-8e5d-4fd2-bc40-56735f38f306
 origin: 84b28c73-3a04-478f-9447-68df026c44fe
 ---
+![Control Panel Listing](/assets/CP-Listing.png)
+
 ## Content
 Under the hood all of your products, orders and coupons are just normal Statamic collections and entries. Meaning that you can use them the same way as you can any of your other bits of contents.
 
@@ -20,6 +22,8 @@ You can also make use of Statamic's headless abilities, meaning you could run th
 Each collection also has its own set of blueprints. When you install Simple Commerce, we create three collections for you. One for products, one for order and another for coupons.
 
 You can edit these blueprints however you'd like. You could use Bard or replicator to create a mind blowing landing page or just add some asset fields to show what your product looks like. You've got the complete freedom of how you run your store.
+
+![Product Detail page](/assets/Product-Detail.png)
 
 ## Templating
 Antlers is the templating language built into Statamic. We ❤️ it. Simple Commerce comes with loads of [tags](/simple-commerce/tags) that help you integrate with Simple Commerce.
