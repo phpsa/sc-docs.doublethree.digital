@@ -1,5 +1,7 @@
 ---
 title: 'About Simple Commerce'
+seo_title: 'Simple Commerce Documentation'
+seo_description: 'Simple Commerce is an e-commerce addon for Statamic 3. Everything is just flat-files, just like it should be. Easy to template and fits in perfectly with the Statamic ecosystem.'
 id: ce8337dc-8a1f-4caa-b99c-b67215c00149
 origin: home
 ---
