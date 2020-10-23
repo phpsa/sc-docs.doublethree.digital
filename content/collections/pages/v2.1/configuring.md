@@ -3,7 +3,9 @@ title: Configuring
 id: 8320cccf-4567-4c28-b604-5da80b8b6d3f
 origin: 74427f4f-8485-4ee9-a0ec-a729a78e59a5
 ---
-During addon installation, a `config/simple-commerce.php` is published in your project. This is the file where your Simple Commerce configuration lives.
+During addon installation, a `config/simple-commerce.php` is published in your project, this is where your Simple Commerce configuration lives.
+
+Most of the available configuration options are documented alongside the feature documentation. This page documents the rest of the configuration options.
 
 ## Site configuration
 Statamic has a concept of sites. Each Statamic instance can have one or more sites. For each of those sites you can use a different currency, a different tax configuration and different shipping methods.
@@ -29,9 +31,7 @@ Statamic has a concept of sites. Each Statamic instance can have one or more sit
         ],
 
         'shipping' => [
-            'methods' => [
-                \DoubleThreeDigital\SimpleCommerce\Shipping\StandardPost::class,
-            ],
+            // Documented alongside shipping
         ],
     ],
 ],
@@ -46,67 +46,10 @@ Whenever you want to add another site to Simple Commerce, just change the array 
 ],
 ```
 
-> **Hot Tip:** Also remember that if you're wanting to use multiple sites, you'll need to [purchase & enable Statamic Pro](https://statamic.dev/licensing).
+> **🔥 Hot Tip:** Also remember that if you're wanting to use multiple sites, you'll need to [purchase & enable Statamic Pro](https://statamic.dev/licensing).
 
-Let's walk through some of the configuration options you have with each site.
+With each site you can configure the currency being used and the tax rate applied to products in the customers' cart.
 
-* The first option is currency, you can use a variety of different currencies in Simple Commerce. To configure one, just put in the three letter currency code and it should be picked up.
-
-* Tax is another thing you can configure. In the default configuration, we have tax setup at 20% and we have it set so our product prices include tax. You can obviusly change this to whatever you'd like.
-
-* Each site can have its own set of shipping methods. A lot of sites have custom shipping rules, so we recommend you build one specifically for your site. <!-- TODO: write documentation on doing this -->
-
-## Gateways
-Simple Commerce has quite a few [built-in payment gateways](/simple-commerce/gateways), as always its something you build custom for your store.
-
-```php
-/*
-|--------------------------------------------------------------------------
-| Gateways
-|--------------------------------------------------------------------------
-|
-| You can setup multiple payment gateways for your store with Simple Commerce.
-| Here's where you can configure the gateways in use.
-|
-*/
-
-'gateways' => [
-    \DoubleThreeDigital\SimpleCommerce\Gateways\DummyGateway::class => [],
-],
-```
-
-To add a gateway, just add the gateway's class name (`DummyGateway::class` syntax) as the array key and an array as the value. The value is normally used for any gateway configuration. If your gateway doesn't have any configuration options, just leave it as an empty array.
-
-## Notifications
-```php
-/*
- |--------------------------------------------------------------------------
- | Notifications
- |--------------------------------------------------------------------------
- |
- | Simple Commerce can automatically send notifications after events occur in your store.
- | eg. a cart being completed.
- |
- | Here's where you can toggle if certain notifications are enabled/disabled.
- |
-*/
-
-'notifications' => [
-  'customer' => [
-    'order_confirmation' => true,
-  ],
-
-  'back_office' => [
-    'to' => 'staff@example.com',
-
-    'order_paid' => true,
-  ],
-],
-```
-
-Simple Commerce can be configured to send emails to your customers and back-office staff when certain events happen, like when an order has been completed.
-
-You can read more about Notifications [over here](/simple-commerce/email)
 
 ## Collections & Taxonomies
 ```php
@@ -136,7 +79,7 @@ You can read more about Notifications [over here](/simple-commerce/email)
 
 If you'd like to change the collections and handles used for certain things in Simple Commerce, we allow you to do that. Just change the appropriate value to the handle of the collection you'd like to use instead.
 
-For example, to use a collection called `Discounts`, with a handle of `discounts` for your orders, you could configure that like this:
+For example, to use a collection called `Discounts`, with a handle of `discounts` for your coupons, you could configure that like this:
 
 ```php
 'collections' => [
