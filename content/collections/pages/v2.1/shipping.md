@@ -25,7 +25,7 @@ Shipping Methods can be configured on a site by site basis. This means you could
 ],
 ```
 
-Similarly to the way you configure gateways, it's just an array of shipping method classes. 
+Similarly to the way you configure gateways, it's just an array of shipping method classes. You can register as many as you need.
 
 ## Creating a shipping method
 
