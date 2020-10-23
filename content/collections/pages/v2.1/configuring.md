@@ -93,4 +93,3 @@ There's a few smaller configuration options too. We've documented them in some b
 
 * `cart_key` will determine the session key used for a customers' cart.
 * `minimum_order_number` allows you to set the minimum for order numbers to start at. By default it is `2000`, so order title's will be `#2000`, `#2001`, etc
-* `low_stock_threshold` allows you to determine the threshold at which you'd like to be notified about stock running low for your products.
