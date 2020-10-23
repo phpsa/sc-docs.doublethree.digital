@@ -12,12 +12,22 @@ And if you need a gateway that we don't already support, it's easy enough to bui
 Gateways are configured in your `config/simple-commerce.php` file. Like so:
 
 ```php
+/*
+|--------------------------------------------------------------------------
+| Gateways
+|--------------------------------------------------------------------------
+|
+| You can setup multiple payment gateways for your store with Simple Commerce.
+| Here's where you can configure the gateways in use.
+|
+*/
+
 'gateways' => [
     \DoubleThreeDigital\SimpleCommerce\Gateways\DummyGateway::class => [],
 ],
 ```
 
-The array key is the gateway class and the key should contain an array of settings for the gateway, such as API keys.
+To add a gateway, just add the gateway's class name (`DummyGateway::class` syntax) as the array key and an array as the value. The array value can be used by the gateway for any configuration options, like API keys etc. If the gateway doesn't need any, just leave it an empty array.
 
 ## Built-in gateways
 
