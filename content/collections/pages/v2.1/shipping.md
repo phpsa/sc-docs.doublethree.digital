@@ -7,6 +7,26 @@ If you're selling physical products on your store, you'll need a way to ship tho
 
 Every store can have any number of shipping methods. For example, you could use one shipping method for 1st Class mail and others for 2nd and 3rd class mail.
 
+## Configuration
+
+Shipping Methods can be configured on a site by site basis. This means you could have different stores for each country you sell in and for each of those countries, you could have different shipping methods.
+
+```php
+'sites' => [
+    'default' => [
+        // ...
+
+        'shipping' => [
+            'methods' => [
+                \DoubleThreeDigital\SimpleCommerce\Shipping\StandardPost::class,
+            ],
+        ],
+    ],
+],
+```
+
+Similarly to the way you configure gateways, it's just an array of shipping method classes. 
+
 ## Creating a shipping method
 
 Simple Commerce doesn't come with any shipping methods out of the box so you'll need to write your own. We do, however have a command you can use to generate the boilerplate for a shipping method.
