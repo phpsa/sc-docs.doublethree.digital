@@ -1,3 +1,9 @@
+{{ if site:name !== 'v2.1' }}
+    <div class="bg-gray-100 border-l-4 border-sc-dark-blue py-4 mb-6 px-6">
+        <p class="font-semibold">You're viewing the documentation for an old version of Simple Commerce. <a class="text-sc-dark-blue underline" href="/v2.1/update-guide">Consider updating to v2.1</a>.</p>
+    </div>
+{{ /if }}
+
 <div class="mx-auto mb-4" style="max-width: 65ch;">
     <h1 class="text-3xl font-bold font-sc mb-2">{{ title }}</h1>
     {{ if intro }}
