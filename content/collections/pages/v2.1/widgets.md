@@ -10,7 +10,7 @@ TODO description
 
 You can display any of the built-in Simple Commerce widgets the same way you can with normal Statamic widgets. Just change the `type`. [See documentation](https://statamic.dev/widgets#updater).
 
-TODO screenshot
+![Sales Widget](/assets/Sales-Widget.png)
 ## Sales widget
 
 TODO text
