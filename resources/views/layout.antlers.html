@@ -18,7 +18,9 @@
         <!-- Primary Meta Tags -->
         <meta name="title" content="{{ title }} - Simple Commerce Documentation">
         <meta name="description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
-        <link rel="canonical" href="{{ canonical }}">
+        {{ if slug }}
+            <link rel="canonical" href="{{ canonical }}">
+        {{ /if }}
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
