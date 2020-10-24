@@ -29,6 +29,18 @@
     border-radius: none;
 }
 
+.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
+    content: '';
+}
+
+.prose blockquote {
+    @apply border-l-4 border-sc-dark-blue not-italic font-medium;
+}
+
+.prose blockquote strong {
+    @apply font-bold;
+}
+
 [x-cloak] {
     @apply hidden;
 }
