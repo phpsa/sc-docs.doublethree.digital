@@ -41,6 +41,10 @@
     @apply font-bold;
 }
 
+.prose a {
+    @apply font-semibold no-underline;
+}
+
 [x-cloak] {
     @apply hidden;
 }
