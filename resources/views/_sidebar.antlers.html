@@ -1,29 +1,57 @@
 <div class="bg-sc-dark-blue text-white h-screen w-full">
-    <div class="flex flex-col justify-between min-h-full p-4">
+    <div class="flex flex-col justify-between min-h-full h-full overflow-y-auto p-4">
         <div class="flex flex-col">
-            <div class="mb-8">
+            <div class="mb-8" :class="{ 'flex flex-row items-center justify-between' : sidebarDisplayed }">
                 <a href="/">
                     <img src="/img/simple-commerce.svg" alt="Simple Commerce" width="200px">
                 </a>
+
+                <button
+                    class="text-white text-xl mr-4 font-semibold lg:hidden focus:outline-none"
+                    :class="{ '' : sidebarDisplayed, 'hidden' : !sidebarDisplayed }"
+                    @click="sidebarDisplayed = false"
+                >Close</button>
             </div>
 
             <div>
-                <h2 class="mb-2 font-bold text-lg">{{ site:name }} Documentation</h2>
                 <nav class="flex flex-col">
                     {{ nav:pages }}
-                        {{ if is_current }}
-                            <div class="mb-2">
-                                <span class="mb-2 block font-medium">{{ title }}</span>
-                                <div class="pl-4 flex flex-col">
-                                    {{ content | noparse | toc }}
+                        {{ if !url }}
+                            <div class="my-4 flex flex-col">
+                                <span class="mb-2 block font-semibold">{{ title }}</span>
 
-                                    <!-- <a class="mb-1 font-medium" href="#">Limitations</a>
-                                    <a class="mb-1" href="#">How it works</a>
-                                    <a class="mb-1" href="#">Licensing</a> -->
-                                </div>
+                                {{ children }}
+                                    {{ if is_current }}
+                                        <div class="mb-2">
+                                            <span class="mb-2 block font-medium">{{ title }}</span>
+                                            <div class="pl-4 flex flex-col">
+                                                {{ content | noparse | toc }}
+
+                                                <!-- <a class="mb-1 font-medium" href="#">Limitations</a>
+                                                <a class="mb-1" href="#">How it works</a>
+                                                <a class="mb-1" href="#">Licensing</a> -->
+                                            </div>
+                                        </div>
+                                    {{ else }}
+                                        <a class="mb-2" href="{{ url }}">{{ title }}</a>
+                                    {{ /if }}
+                                {{ /children }}
                             </div>
                         {{ else }}
-                            <a class="mb-2" href="{{ url }}">{{ title }}</a>
+                            {{ if is_current }}
+                                <div class="mb-2">
+                                    <span class="mb-2 block font-medium">{{ title }}</span>
+                                    <div class="pl-4 flex flex-col">
+                                        {{ content | noparse | toc }}
+
+                                        <!-- <a class="mb-1 font-medium" href="#">Limitations</a>
+                                        <a class="mb-1" href="#">How it works</a>
+                                        <a class="mb-1" href="#">Licensing</a> -->
+                                    </div>
+                                </div>
+                            {{ else }}
+                                <a class="mb-3" href="{{ url }}">{{ title }}</a>
+                            {{ /if }}
                         {{ /if }}
                     {{ /nav:pages }}
                 </nav>
@@ -35,8 +63,8 @@
                 class="bg-white hover:bg-sc-dark-blue rounded-lg border-2 border-transparent hover:border-white text-sc-dark-blue hover:text-white py-3 text-center font-sc block font-bold text-base"
                 target="_blank"
                 href="https://statamic.com/addons/double-three-digital/simple-commerce"
+                onclick="window.fathom.trackGoal('AFHUOFN0', 199);"
             >Buy Simple Commerce</a>
         </div>
     </div>
 </div>
-\

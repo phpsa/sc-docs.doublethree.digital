@@ -9,11 +9,11 @@ We built Simple Commerce to feel as native as possible to Statamic. We've adopte
 
 **But why flat files?** Because they're awesome! Besides the fact that you can [version control them](/knowledge-base/version-control-strategies), it's also a big plus for security as there's no way for hackers to use MySQL Injection to fetch important data from your system.
 
-**And by the way, you have full control over content modeling!** You heard it right, basically the only requirement you need if to have a price field on your products and you're all set. 
+**And by the way, you have full control over content modeling!** You heard it right, basically the only requirement you need if to have a price field on your products and you're all set.
 
 **Simple Commerce also has first-party support for popular gateways...** Right now, Stripe and Mollie are officially supported. If you need one that we don't support, it's easy to build your own gateway.
 
-[Learn more about how it works under the hood](/under-the-hood)
+[Learn more about how it works](/how-it-works)
 
 ## Limitations
 Simple Commerce is pretty lightweight (hence the name). This means it doesn't have as much functionality as likes of Shopify or Craft Commerce.

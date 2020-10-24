@@ -11,7 +11,7 @@
 }
 
 .prose p code {
-	@apply bg-gray-200 font-mono text-sm p-1 mx-5;
+	@apply bg-gray-200 font-mono text-sm p-1 font-normal;
 }
 
 .prose ul {
@@ -27,6 +27,22 @@
     position: inherit;
     background: none;
     border-radius: none;
+}
+
+.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
+    content: '';
+}
+
+.prose blockquote {
+    @apply border-l-4 border-sc-dark-blue not-italic font-medium;
+}
+
+.prose blockquote strong {
+    @apply font-bold;
+}
+
+.prose a {
+    @apply font-semibold;
 }
 
 [x-cloak] {

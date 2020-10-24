@@ -18,30 +18,34 @@
         <!-- Primary Meta Tags -->
         <meta name="title" content="{{ title }} - Simple Commerce Documentation">
         <meta name="description" content="{{ content | noparse | strip_tags | safe_truncate:200:... }}">
+        {{ if slug }}
+            <link rel="canonical" href="{{ canonical }}">
+        {{ /if }}
 
         <!-- Open Graph / Facebook -->
         <meta property="og:type" content="website">
         <meta property="og:url" content="{{ current_url }}">
         <meta property="og:title" content="{{ seo_title ?? title }} - Simple Commerce Documentation">
         <meta property="og:description" content="{{ seo_description ?? content | noparse | strip_tags | safe_truncate:200:... }}">
-        <meta property="og:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
+        <meta property="og:image" content="{{ config:app:url }}{{ seo_image ?? '/img/simple-commerce-banner.jpg' }}">
 
         <!-- Twitter -->
         <meta property="twitter:card" content="summary_large_image">
         <meta property="twitter:url" content="{{ current_url }}">
         <meta property="twitter:title" content="{{ seo_title ?? title }} - Simple Commerce Documentation">
         <meta property="twitter:description" content="{{ seo_description ?? content | noparse | strip_tags | safe_truncate:200:... }}">
-        <meta property="twitter:image" content="{{ config:app:url }}/img/simple-commerce-banner.jpg">
+        <meta property="twitter:image" content="{{ config:app:url }}{{ seo_image ?? '/img/simple-commerce-banner.jpg' }}">
 
         <link rel="apple-touch-icon" sizes="180x180" href="/img/favicons/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/img/favicons/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/img/favicons/favicon-16x16.png">
+        <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="shortcut icon" href="/img/favicons/favicon.ico">
         <meta name="theme-color" content="#041B34">
 </head>
     <body>
-        <div class="flex overflow-hidden h-screen">
-            <aside class="w-2/12 font-sc">
+        <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
+            <aside :class="{ 'hidden' : !sidebarDisplayed, 'absolute top-0 bottom-0 right-0 left-0 w-full h-screen overflow-hidden z-20' : sidebarDisplayed }" class="hidden lg:block lg:w-2/12 font-sc">
                 {{ partial:sidebar }}
             </aside>
 
@@ -56,7 +60,7 @@
 
                 <footer class="bg-sc-dark-blue py-4 mt-20">
                     <div class="mx-8 flex items-center justify-between">
-                        <p class="text-white font-medium text-sm">Copyright &copy Double Three Digital</p>
+                        <p class="text-white font-medium text-sm">Copyright &copy <a href="https://doublethree.digital" target="_blank">Double Three Digital</a></p>
 
                         <div class="flex flex-row items-center space-x-6">
                             <a href="/discord" target="_blank">{{ svg src="/img/discord.svg" class="h-6 w-auto" }}</a>
