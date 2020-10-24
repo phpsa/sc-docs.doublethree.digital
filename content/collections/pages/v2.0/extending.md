@@ -1,5 +1,5 @@
 ---
-title: Extending
+title: 'Extending Simple Commerce'
 intro: 'Simple Commerce is built to be extended so you can make it your own.'
 id: 8808e103-8b01-45c9-8612-334c3a471558
 ---
