@@ -42,7 +42,7 @@
 }
 
 .prose a {
-    @apply font-semibold no-underline;
+    @apply font-semibold;
 }
 
 [x-cloak] {
