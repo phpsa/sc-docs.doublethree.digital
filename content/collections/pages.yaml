@@ -29,13 +29,6 @@ structure:
       -
         entry: 7ac86157-214f-4af8-8b4d-f69a1ffe36bf
       -
-        entry: 9e5dbae7-cda1-43e5-ad44-29a55e563048
-        children:
-          -
-            entry: fd6b1905-fadc-4f9c-a9fc-9e402672d592
-          -
-            entry: b1a2ca6f-acd8-4712-9efa-08826dff5c96
-      -
         entry: c0af5012-07ae-4deb-b61d-1d4df22f43b4
       -
         entry: fbbabc6e-90e3-4eb8-a8a8-cadce1c3d047
@@ -47,3 +40,10 @@ structure:
         entry: ba639bf9-9efd-40f6-9d5c-2121bbe298f5
       -
         entry: 0d7935ee-2316-4bdc-9027-d0aa18b00372
+      -
+        entry: 9e5dbae7-cda1-43e5-ad44-29a55e563048
+        children:
+          -
+            entry: fd6b1905-fadc-4f9c-a9fc-9e402672d592
+          -
+            entry: b1a2ca6f-acd8-4712-9efa-08826dff5c96
