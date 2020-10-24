@@ -1,5 +1,5 @@
 ---
-title: Extending
+title: 'Extending Simple Commerce'
 id: fbbabc6e-90e3-4eb8-a8a8-cadce1c3d047
 origin: 8808e103-8b01-45c9-8612-334c3a471558
 ---
