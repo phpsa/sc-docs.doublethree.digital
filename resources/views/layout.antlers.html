@@ -44,8 +44,8 @@
         <meta name="theme-color" content="#041B34">
 </head>
     <body>
-        <div class="flex overflow-hidden h-screen">
-            <aside class="w-2/12 font-sc">
+        <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
+            <aside :class="{ 'hidden' : !sidebarDisplayed, 'absolute top-0 bottom-0 right-0 left-0 w-full h-screen overflow-hidden z-20' : sidebarDisplayed }" class="hidden lg:block lg:w-2/12 font-sc">
                 {{ partial:sidebar }}
             </aside>
 

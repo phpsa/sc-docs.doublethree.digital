@@ -1,10 +1,16 @@
 <div class="bg-sc-dark-blue text-white h-screen w-full">
     <div class="flex flex-col justify-between min-h-full h-full overflow-y-auto p-4">
         <div class="flex flex-col">
-            <div class="mb-8">
+            <div class="mb-8" :class="{ 'flex flex-row items-center justify-between' : sidebarDisplayed }">
                 <a href="/">
                     <img src="/img/simple-commerce.svg" alt="Simple Commerce" width="200px">
                 </a>
+
+                <button
+                    class="text-white text-xl mr-4 font-semibold lg:hidden focus:outline-none"
+                    :class="{ '' : sidebarDisplayed, 'hidden' : !sidebarDisplayed }"
+                    @click="sidebarDisplayed = false"
+                >Close</button>
             </div>
 
             <div>
