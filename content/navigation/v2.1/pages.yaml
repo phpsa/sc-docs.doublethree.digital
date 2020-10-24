@@ -2,8 +2,6 @@ tree:
   -
     entry: ce8337dc-8a1f-4caa-b99c-b67215c00149
   -
-    entry: 7ac86157-214f-4af8-8b4d-f69a1ffe36bf
-  -
     entry: c0af5012-07ae-4deb-b61d-1d4df22f43b4
   -
     title: 'Getting Started'
@@ -41,3 +39,5 @@ tree:
         entry: b1a2ca6f-acd8-4712-9efa-08826dff5c96
       -
         entry: fbbabc6e-90e3-4eb8-a8a8-cadce1c3d047
+      -
+        entry: 7ac86157-214f-4af8-8b4d-f69a1ffe36bf
