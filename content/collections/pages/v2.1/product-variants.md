@@ -5,6 +5,8 @@ id: ba639bf9-9efd-40f6-9d5c-2121bbe298f5
 ---
 Product Variants are a pretty common feature amoung e-commerce stores today, especially for stores that sell physical products, like t-shirts.
 
+![Product Variants Fieldtype](/assets/Product-Variants-Fieldtype.png)
+
 ## How it works
 
 Normally, you'd just have a `Price` field on your product but if you want to use variants, you can switch it out for a `Product Variants` field. 
