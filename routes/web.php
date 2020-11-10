@@ -26,7 +26,7 @@ Route::name('current_release_redirects')->group(function () {
 	Route::redirect('/tags', $currentSite['url'].'/tags');
 	Route::redirect('/email', $currentSite['url'].'/email');
 	Route::redirect('/how-it-works', $currentSite['url'].'/how-it-works');
-	Route::redirect('/knowledge-base/version-control-strategies', $currentSite['url'].'/knowledge-base/version-control-strategies');
+	Route::redirect('/knowledge-base/version-control-strategies', $currentSite['url'].'knowledge-base/version-control-strategies');
 	Route::redirect('/extending', $currentSite['url'].'/how-it-works');
 	Route::redirect('/product-variants', $currentSite['url'].'/product-variants');
 });
