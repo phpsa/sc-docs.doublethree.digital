@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed35f1526a140e5860a7ca8a12df4f8d",
+    "content-hash": "2c460826a27e318690b8697ce1b47d0d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3716,54 +3716,6 @@
             "time": "2020-05-12T15:16:56+00:00"
         },
         {
-            "name": "rias/statamic-redirect",
-            "version": "1.3.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/riasvdv/statamic-redirect.git",
-                "reference": "7bf720a5f9b61cfab3944253e083bbd2c9f523ad"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/riasvdv/statamic-redirect/zipball/7bf720a5f9b61cfab3944253e083bbd2c9f523ad",
-                "reference": "7bf720a5f9b61cfab3944253e083bbd2c9f523ad",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "php": ">=7.3",
-                "spatie/data-transfer-object": "^1.13",
-                "statamic/cms": "^3.0"
-            },
-            "require-dev": {
-                "orchestra/testbench": "^5.0",
-                "phpunit/phpunit": "^9.3"
-            },
-            "type": "library",
-            "extra": {
-                "statamic": {
-                    "name": "Statamic Redirect",
-                    "description": "Statamic Redirect addon"
-                },
-                "laravel": {
-                    "providers": [
-                        "Rias\\StatamicRedirect\\RedirectServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Rias\\StatamicRedirect\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "support": {
-                "issues": "https://github.com/riasvdv/statamic-redirect/issues",
-                "source": "https://github.com/riasvdv/statamic-redirect/tree/1.3.1"
-            },
-            "time": "2020-10-20T09:32:16+00:00"
-        },
-        {
             "name": "seld/jsonlint",
             "version": "1.8.3",
             "source": {
@@ -3925,57 +3877,6 @@
                 "source": "https://github.com/spatie/blink/tree/master"
             },
             "time": "2020-02-16T19:18:04+00:00"
-        },
-        {
-            "name": "spatie/data-transfer-object",
-            "version": "1.13.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/data-transfer-object.git",
-                "reference": "2f6291620f1f067508b7d80d3b0346609adc265e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/data-transfer-object/zipball/2f6291620f1f067508b7d80d3b0346609adc265e",
-                "reference": "2f6291620f1f067508b7d80d3b0346609adc265e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1"
-            },
-            "require-dev": {
-                "larapack/dd": "^1.0",
-                "phpunit/phpunit": "^7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\DataTransferObject\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Brent Roose",
-                    "email": "brent@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Data transfer objects with batteries included",
-            "homepage": "https://github.com/spatie/data-transfer-object",
-            "keywords": [
-                "data-transfer-object",
-                "spatie"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/data-transfer-object/issues",
-                "source": "https://github.com/spatie/data-transfer-object/tree/master"
-            },
-            "time": "2020-01-29T15:10:20+00:00"
         },
         {
             "name": "statamic/cms",
