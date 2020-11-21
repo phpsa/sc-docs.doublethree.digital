@@ -22,7 +22,7 @@
 
                                 {{ children }}
                                     {{ if is_current }}
-                                        <div class="mb-2">
+                                        <div class="active-item mb-2">
                                             <span class="mb-2 block font-medium">{{ title }}</span>
                                             <div class="pl-4 flex flex-col">
                                                 {{ content | noparse | toc }}
@@ -39,7 +39,7 @@
                             </div>
                         {{ else }}
                             {{ if is_current }}
-                                <div class="mb-2">
+                                <div class="active-item mb-2">
                                     <span class="mb-2 block font-medium">{{ title }}</span>
                                     <div class="pl-4 flex flex-col">
                                         {{ content | noparse | toc }}
