@@ -1,6 +1,6 @@
 ---
 title: Installation
-intro: 'It''s as easy as 1, 2, 3, a, b, c. Seriously though, only three install steps, it''s mad.'
+intro: 'It''s as easy as 1, 2, 3, a, b, c. Seriously though, only two install steps, it''s mad.'
 id: fe33ff01-b30c-45e7-8537-017f34a6c09d
 ---
 ## Requirements
@@ -17,7 +17,7 @@ We recommend installing Simple Commerce via the command line instead of through 
 1. Install Simple Commerce with Composer
 
 ```
-composer require doublethreedigital/simple-commerce
+composer require doublethreedigital/simple-commerce:v2.0
 ```
 
 2. Publish Simple Commerce's vendor assets. This will give you our default blueprints, fieldtypes and configuration file.
