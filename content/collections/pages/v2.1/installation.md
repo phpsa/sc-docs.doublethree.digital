@@ -9,7 +9,7 @@ Simple Commerce has a few requiements:
 * PHP 7.4
 * `php-intl` PHP extension
 
-We do however recommend that your site has SSL setup because you're going to be dealing with ecommerce and credit card information. [Lets Encrypt](https://letsencrypt.org/) can give you SSL certificates for free.
+While not a requirement, we recommend you have an SSL certificate for your production site.
 
 ## Standard Install
 We recommend installing Simple Commerce via the command line instead of through the Statamic Control Panel.
@@ -20,19 +20,9 @@ We recommend installing Simple Commerce via the command line instead of through 
 composer require doublethreedigital/simple-commerce
 ```
 
-**2.** Publish Simple Commerce's vendor assets. This will give you our default blueprints, fieldtypes and configuration file.
+**2.** Run `php please sc:install` - it'll publish the Simple Commerce default blueprints, configuration file and will setup collections and taxonomies.
 
-```
-php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\ServiceProvider"
-```
-
-**3.** Lastly, you'll need to setup the collections & taxonomies needed for Simple Commerce. You could do this manually or you can use the command that will do it for you.
-
-```
-php please simple-commerce:setup-content
-```
-
-**4.** **Job Done!**
+**3.** That's it installed. Really simple.
 
 ## Quick Start
 If you'd prefer to get started with some boilerplate views and Simple Commerce already installed, you should checkout our the [Simple Commerce Starter Kit](https://github.com/doublethreedigital/simple-commerce-starter).
