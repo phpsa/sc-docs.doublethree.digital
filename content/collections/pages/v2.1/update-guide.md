@@ -11,7 +11,7 @@ We've tried to document as many of the breaking changes as we can. Although, if 
 composer update doublethreedigital/simple-commerce:^2.1
 ```
 
-### New Configuration Values (Breaking)
+### New Configuration Values (breaking)
 v2.1 added two new configuration values, `minimum_order_number` and `low_stock_threshold`. It's recommended to add these to your `config/simple-commerce.php` file...
 
 ```php
@@ -41,7 +41,7 @@ v2.1 added two new configuration values, `minimum_order_number` and `low_stock_t
     'low_stock_threshold' => 25,
 ```
 
-### Updated notifications config (Breaking)
+### Updated notifications config (breaking)
 In order to extend Simple Commerce's notifications system to work with back-office notifications, we've updated the notifications config. Please review the changes and update your config file:
 
 ```php
