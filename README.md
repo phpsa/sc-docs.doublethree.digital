@@ -20,3 +20,9 @@ When it's time to add a new release to the documentation, follow these steps:
 * Create a new site in `config/statamic/sites.php`, with the latest release being at the top of the array.
 * Go to each of the entries you wish to have versions of and copy the content to the latest release site.
 * In the `routes/web.php` file, change references to the previous release to the new one. The latest release should only be hard coded in a single place but best to double check.
+
+## Resources
+
+* [Documentation](https://sc-docs.doublethree.digital)
+* [Simple Commerce Issues](https://github.com/doublethreedigital/simple-commerce/issues)
+* [Simple Commerce Discussions](https://github.com/doublethreedigital/simple-commerce/discussions)
