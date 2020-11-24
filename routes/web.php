@@ -18,7 +18,8 @@ use Statamic\Statamic;
 Route::name('current_release_redirects')->group(function () {
     $currentSite = array_first(config('statamic.sites.sites'));
 
-	Route::redirect('/', $currentSite['url']);
+    Route::redirect('/', $currentSite['url']);
+    Route::redirect('/home', $currentSite['url']);
 	Route::redirect('/installation', $currentSite['url'].'installation');
 	Route::redirect('/configuring', $currentSite['url'].'configuring');
 	Route::redirect('/gateways', $currentSite['url'].'gateways');
@@ -42,3 +43,8 @@ Statamic::booted(function () {
 
 Route::redirect('/discord', 'https://discord.gg/U7xgtd5');
 Route::redirect('/github', 'https://github.com/doublethreedigital/simple-commerce');
+
+Route::statamic('/sitemap.xml', 'sitemap', [
+    'layout' => null,
+    'content_type' => 'xml',
+]);
