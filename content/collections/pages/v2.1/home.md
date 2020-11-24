@@ -24,6 +24,6 @@ Simple Commerce is pretty lightweight (hence the name). This means it doesn't ha
 
 ## Licensing and Support
 
-To use Simple Commerce in a production environment, you'll need to [buy a license from the Statamic Marketplace](https://statamic.com/addons/double-three-digital/simple-commerce).
+Simple Commerce is commercial software, so you'll need to purchase a license from the Statamic Marketplace before you can use it in production environments.
 
-For official support, email [addons@doublethree.digital](mailto:addons@doublethree.digital). There's also [a Discord server](/discord), filled with community members.
+If you have any issues, ask a question on [GitHub Discussions](https://github.com/doublethreedigital/simple-commerce/discussions) or [send an email](mailto:hello@doublethree.digital).
