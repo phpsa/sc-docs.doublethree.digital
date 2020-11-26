@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>{{ title }} - Simple Commerce Documentation</title>
-        <!-- <link href="https://fonts.googleapis.com/css?family=Exo&display=swap" rel="stylesheet"> -->
         <link rel="stylesheet" href="/css/site.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
         {{ if app:env === 'production' }}
@@ -71,5 +71,17 @@
         </div>
 
         <script src="/js/site.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+        <script type="text/javascript">
+            docsearch({
+                algoliaOptions: {
+                    hitsPerPage: 8,
+                },
+                apiKey: '3c4b0eae8c5977dce91d83c1463c425e',
+                indexName: 'doublethree',
+                inputSelector: '#search-box',
+                debug: false,
+            });
+        </script>
     </body>
 </html>

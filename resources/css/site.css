@@ -48,3 +48,7 @@
 [x-cloak] {
     @apply hidden;
 }
+
+.algolia-autocomplete {
+    @apply w-full;
+}

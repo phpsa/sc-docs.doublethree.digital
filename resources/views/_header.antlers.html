@@ -4,15 +4,13 @@
 
 <header class="w-full mb-12">
     <div class="w-full flex items-center">
-        <form class="w-full" action="{{ site:url }}/search">
+        <form class="w-full">
             <input
-                type="text"
-                name="q"
+                id="search-box"
+                type="search"
                 class="block font-sc font-medium px-4 py-2 w-full rounded-md border border-gray-300 bg-white text-sm leading-5 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50"
                 placeholder="Search Documentation"
-                value="{{ get:q }}"
             >
-            <input type="submit" hidden />
         </form>
 
         <div class="px-4">
