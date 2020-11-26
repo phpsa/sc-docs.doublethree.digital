@@ -49,6 +49,6 @@
     @apply hidden;
 }
 
-form .algolia-autocomplete {
+.algolia-autocomplete {
     @apply w-full;
 }
