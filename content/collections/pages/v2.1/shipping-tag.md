@@ -1,5 +1,5 @@
 ---
-title: Shipping
+title: 'Shipping Tag'
 parent: e98d4e7b-3e63-4328-bacc-83ace3e2af42
 id: 0c9c9a0f-f56e-464f-9b82-1b3abb96377f
 ---
