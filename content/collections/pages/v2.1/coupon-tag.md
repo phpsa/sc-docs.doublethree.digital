@@ -1,5 +1,5 @@
 ---
-title: Coupons
+title: 'Coupon Tag'
 parent: e98d4e7b-3e63-4328-bacc-83ace3e2af42
 id: 0c771570-05f5-4fdd-bfb9-2462a28d4a3e
 ---
