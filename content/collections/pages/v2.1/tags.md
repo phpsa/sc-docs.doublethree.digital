@@ -1,7 +1,7 @@
 ---
 title: Tags
-origin: 6b491282-e792-431a-bc6a-912ee9b60edc
 id: e98d4e7b-3e63-4328-bacc-83ace3e2af42
+origin: 6b491282-e792-431a-bc6a-912ee9b60edc
 ---
 Simple Commerce provides a bunch of tags to help you to integrate it inside your templates.
 
@@ -274,7 +274,7 @@ This tag lets you loop through countries.
 
 ```
 {{ sc:countries }}
-  {{ name }}
+  <option value="{{ iso }}">{{ name }}</option>
 {{ /sc:countries }}
 ```
 
