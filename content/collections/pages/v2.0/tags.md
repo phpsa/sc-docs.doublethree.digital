@@ -273,7 +273,7 @@ This tag lets you loop through countries.
 
 ```
 {{ sc:countries }}
-  {{ name }}
+  <option value="{{ iso }}">{{ name }}</option>
 {{ /sc:countries }}
 ```
 
