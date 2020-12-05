@@ -1,5 +1,5 @@
 ---
-title: Gateways
+title: 'Gateways Tag'
 parent: e98d4e7b-3e63-4328-bacc-83ace3e2af42
 id: bc911ab7-2954-48fc-ab01-fd889a39d812
 ---
