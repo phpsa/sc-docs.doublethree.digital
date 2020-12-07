@@ -47,3 +47,5 @@ Route::statamic('/sitemap.xml', 'sitemap', [
     'layout' => null,
     'content_type' => 'xml',
 ]);
+
+Route::statamic('/features', 'features');
