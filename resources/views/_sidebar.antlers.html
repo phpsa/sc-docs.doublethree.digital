@@ -24,13 +24,12 @@
                                     {{ if is_current }}
                                         <div class="active-item mb-2">
                                             <span class="mb-2 block font-medium">{{ title }}</span>
-                                            <div class="pl-4 flex flex-col">
-                                                {{ content | noparse | toc }}
 
-                                                <!-- <a class="mb-1 font-medium" href="#">Limitations</a>
-                                                <a class="mb-1" href="#">How it works</a>
-                                                <a class="mb-1" href="#">Licensing</a> -->
-                                            </div>
+                                            {{ if is_entry }}
+                                                <div class="pl-4 flex flex-col">
+                                                    {{ content | noparse | toc }}
+                                                </div>
+                                            {{ /if }}
                                         </div>
                                     {{ else }}
                                         <a class="mb-2" href="{{ url }}">{{ title }}</a>
@@ -41,13 +40,12 @@
                             {{ if is_current }}
                                 <div class="active-item mb-2">
                                     <span class="mb-2 block font-medium">{{ title }}</span>
-                                    <div class="pl-4 flex flex-col">
-                                        {{ content | noparse | toc }}
 
-                                        <!-- <a class="mb-1 font-medium" href="#">Limitations</a>
-                                        <a class="mb-1" href="#">How it works</a>
-                                        <a class="mb-1" href="#">Licensing</a> -->
-                                    </div>
+                                    {{ if is_entry }}
+                                        <div class="pl-4 flex flex-col">
+                                            {{ content | noparse | toc }}
+                                        </div>
+                                    {{ /if }}
                                 </div>
                             {{ else }}
                                 <a class="mb-3" href="{{ url }}">{{ title }}</a>
