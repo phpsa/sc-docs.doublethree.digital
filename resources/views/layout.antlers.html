@@ -79,6 +79,7 @@
             docsearch({
                 algoliaOptions: {
                     hitsPerPage: 8,
+                    facetFilters: ["version:{{ site:name ?? 'v2.1' }}"]
                 },
                 apiKey: '3c4b0eae8c5977dce91d83c1463c425e',
                 indexName: 'doublethree',
