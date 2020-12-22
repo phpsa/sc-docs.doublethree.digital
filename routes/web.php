@@ -22,6 +22,7 @@ Route::name('current_release_redirects')->group(function () {
     Route::redirect('/home', $currentSite['url']);
 	Route::redirect('/installation', $currentSite['url'].'installation');
 	Route::redirect('/configuring', $currentSite['url'].'configuring');
+	Route::redirect('/multi-site', $currentSite['url'].'multi-site');
 	Route::redirect('/gateways', $currentSite['url'].'gateways');
 	Route::redirect('/shipping', $currentSite['url'].'shipping');
 	Route::redirect('/tags', $currentSite['url'].'tags');
