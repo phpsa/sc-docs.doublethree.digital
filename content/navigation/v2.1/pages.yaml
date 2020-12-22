@@ -12,6 +12,8 @@ tree:
         entry: 57d6baa6-8e5d-4fd2-bc40-56735f38f306
       -
         entry: 8320cccf-4567-4c28-b604-5da80b8b6d3f
+      -
+        entry: 3f51eede-203e-4bb8-987c-7418a8b450c6
   -
     title: Products
     children:
