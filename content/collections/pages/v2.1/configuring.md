@@ -8,48 +8,8 @@ During addon installation, a `config/simple-commerce.php` is published in your p
 Most of the available configuration options are documented alongside the feature documentation. This page documents the rest of the configuration options.
 
 ## Site configuration
-Statamic has a concept of sites. Each Statamic instance can have one or more sites. For each of those sites you can use a different currency, a different tax configuration and different shipping methods.
 
-```php
-/*
-|--------------------------------------------------------------------------
-| Sites
-|--------------------------------------------------------------------------
-|
-| For each of your Statamic sites, you can setup a new store which allows you
-| to use different currencies, tax rates and shipping methods.
-|
-*/
-
-'sites' => [
-    'default' => [
-        'currency' => 'GBP',
-
-        'tax' => [
-            'rate' => 20,
-            'included_in_prices' => false,
-        ],
-
-        'shipping' => [
-            // Documented alongside shipping
-        ],
-    ],
-],
-```
-
-Whenever you want to add another site to Simple Commerce, just change the array key from `default` to your new one. Remember to keep the site key the same between the Simple Commerce config and the Statamic config.
-
-```
-'sites' => [
-    'default' => [...],
-    'french' => [...],
-],
-```
-
-> **🔥 Hot Tip:** Also remember that if you're wanting to use multiple sites, you'll need to [purchase & enable Statamic Pro](https://statamic.dev/licensing).
-
-With each site you can configure the currency being used and the tax rate applied to products in the customers' cart.
-
+We've moved our documentation about configuring sites over to a new [Multi-site](/v2.1/multi-site) page.
 
 ## Collections & Taxonomies
 ```php
