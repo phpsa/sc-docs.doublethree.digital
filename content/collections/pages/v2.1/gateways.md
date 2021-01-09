@@ -194,3 +194,16 @@ Below is an example of the off-site gateway checkout tag for Mollie. You can obv
 After the customer completes payment on the off-site gateway they will be redirected back to your store's site. Either to the redirect URL provided or to your store's homepage. 
 
 Behind the scenes, the customer's payment confirmation will be sent via webhooks to your gateway.
+
+## Using webhooks
+Some gateways offer webhooks, a way for your gateway to report back to Simple Commerce about payment statuses etc. Webhook URLs look like this: `https://yoursite.com/!/simple-commerce/mollie/webhook`.
+
+Most gateways, like Stripe, will require you to setup the webhook endpoint on their website. However, others may automatically set the webhook when Simple Commerce creates a transaction.
+
+Webhooks will also need to bypass [Laravel's CSRF verification](https://laravel.com/docs/8.x/csrf). You can configure CSRF exceptions in your `app/Http/Middleware/VerifyCsrfToken.php` file.
+
+```php
+protected $except = [
+  '/!/simple-commerce/gateways/mollie/webhook',
+];
+```
