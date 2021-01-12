@@ -7,3 +7,6 @@ preferences:
     -
       name: 'Pages ‹ Collections'
       url: collections/pages
+    -
+      name: 'Pages ‹ Navigation'
+      url: navigation/pages
