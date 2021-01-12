@@ -2,3 +2,8 @@ name: 'Duncan McClean'
 super: true
 id: c907d0ec-d1cf-4be1-a2bf-54416e5b373c
 password_hash: $2y$10$.ksfLkiRTDyjTn8PxVVRjOU2gYrqtgtgGTvcr0QJCa9hji6L4iG5m
+preferences:
+  favorites:
+    -
+      name: 'Pages ‹ Collections'
+      url: collections/pages
