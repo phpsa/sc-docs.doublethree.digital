@@ -1,5 +1,5 @@
 ---
-title: 'Using Simple Commerce with AJAX'
+title: 'Using with AJAX'
 intro: 'Using AJAX takes a little bit of effort but it''s worth it to make a truly custom e-commerce site.'
 id: 871bec5a-4c52-48c9-9f45-9800a40f33cd
 ---
