@@ -19,6 +19,16 @@ If you're super duper interested, here's [the routes file](https://github.com/do
 
 You can send any of the same parameters to the endpoints as documented in the respective tag.
 
+Instead of returning redirects when you submit actions, a JSON response will be returned, containing the request status, a message and any assosiated resources, like the current cart.
+
+```json
+{
+ 	"status": "success",
+  	"message": "Cart Updated",
+  	"cart": {...}
+}
+```
+
 ## CSRF
 
 CSRF is a feature of Laravel which essentially helps to prevent request spoofing by providing a token only available to the current user's specific session.
