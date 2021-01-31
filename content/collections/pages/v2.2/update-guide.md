@@ -29,13 +29,13 @@ It will continue to function for now, however the plan is to remove it completel
 
 #### Changes to Repositories
 
-Simple Commerce used to split code into Repositories, we have re-structured these in v2.2 to cleanup the codebase for future development. 
+Simple Commerce used to split code into Repositories, we have re-structured these in v2.2 to cleanup the codebase for future development.
 
 There's a few changes that you may need to make:
 
 * Contracts have been renamed to remove `Repository` from the name. Example: `ProductRepository` is now `Product`.
-* Repositories have moved from the `Repositories` namespace into ones for the individual features, like Order or Product. 
-* Repositories used to have separate `save` and `update` methods. These have been merged into a single `save` method which should be added to the end of a method chan, like below:
+* Repositories have moved from the `Repositories` namespace into ones for the individual features, like Order or Product.
+* Repositories used to have separate `save` and `update` methods. These have been merged into a single `save` method which should be added to the end of a method chain, like below:
 
 ```php
 Order::find('x-y-z')
