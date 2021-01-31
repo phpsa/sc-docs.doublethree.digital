@@ -54,9 +54,9 @@
         <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="shortcut icon" href="/img/favicons/favicon.ico">
         <meta name="theme-color" content="#041B34">
-        
+
         <!-- Docsearch -->
-        <meta name="docsearch:version" content="{{ site:name ?? 'v2.1' }}" />
+        <meta name="docsearch:version" content="{{ site:name ?? 'v2.2' }}" />
 </head>
     <body>
         <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
@@ -91,7 +91,7 @@
             docsearch({
                 algoliaOptions: {
                     hitsPerPage: 8,
-                    facetFilters: ["version:{{ site:name ?? 'v2.1' }}"]
+                    facetFilters: ["version:{{ site:name ?? 'v2.2' }}"]
                 },
                 apiKey: '3c4b0eae8c5977dce91d83c1463c425e',
                 indexName: 'doublethree',

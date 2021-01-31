@@ -16,6 +16,12 @@ return [
     'sites' => [
 
         // Newest version should be first in the array
+        'v2.2' => [
+            'name' => 'v2.2',
+            'locale' => 'en_US',
+            'url' => '/v2.2/',
+        ],
+
         'v2.1' => [
             'name' => 'v2.1',
             'locale' => 'en_US',
