@@ -54,9 +54,9 @@
         <link rel="mask-icon" href="/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
         <link rel="shortcut icon" href="/img/favicons/favicon.ico">
         <meta name="theme-color" content="#041B34">
-        
+
         <!-- Docsearch -->
-        <meta name="docsearch:version" content="{{ site:name ?? 'v2.1' }}" />
+        <meta name="docsearch:version" content="{{ site:name ?? 'v2.2' }}" />
 </head>
     <body>
         <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
@@ -75,7 +75,7 @@
 
                 <footer class="bg-sc-dark-blue py-4 mt-20">
                     <div class="mx-8 flex items-center justify-between">
-                        <p class="text-white font-medium text-sm">Copyright &copy <a href="https://doublethree.digital" target="_blank">Double Three Digital</a></p>
+                        <p class="text-white font-medium text-sm">Copyright &copy <a href="https://duncanm.dev" target="_blank">Duncan McClean</a></p>
 
                         <div class="flex flex-row items-center space-x-6">
                             <a href="/github" target="_blank">{{ svg src="/img/github.svg" class="h-6 w-auto" }}</a>
@@ -91,7 +91,7 @@
             docsearch({
                 algoliaOptions: {
                     hitsPerPage: 8,
-                    facetFilters: ["version:{{ site:name ?? 'v2.1' }}"]
+                    facetFilters: ["version:{{ site:name ?? 'v2.2' }}"]
                 },
                 apiKey: '3c4b0eae8c5977dce91d83c1463c425e',
                 indexName: 'doublethree',
