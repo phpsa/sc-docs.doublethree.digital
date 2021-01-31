@@ -11,7 +11,7 @@ We've tried to document as many of the breaking changes as we can. Although, if 
 composer update doublethreedigital/simple-commerce:^2.2
 ```
 
-1. Update dependency in `composer.json` to `^2.1` and run `composer update`.
+1. Update dependency in `composer.json` to `^2.2` and run `composer update`.
 2. Run `php please sc:upgrade` to automate the majority of changes.
 
 ### API changes
