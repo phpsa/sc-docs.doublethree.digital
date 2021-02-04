@@ -23,7 +23,7 @@ content/collections/orders/*.md
 content/collections/customers/*.md
 ```
 
-Remember to backup your orders & collections though, especially now that they're not in version control. You could use something like [file backups on Snapshooter](https://snapshooter.io/?via=duncan) to back them up on a regular basis.
+Remember to backup your orders & collections though, especially now that they're not in version control. You could use something like [file backups on Snapshooter](https://snapshooter.io?via=duncanmcclean) to back them up on a regular basis.
 
 ## 3. Use a traditional database
 The third option would be to use a traditional, old-school database, like you would with any other e-commerce solution.
