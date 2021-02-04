@@ -1,6 +1,6 @@
 ---
-id: b1a2ca6f-acd8-4712-9efa-08826dff5c96
 title: 'Version Control Strategies'
+id: b1a2ca6f-acd8-4712-9efa-08826dff5c96
 origin: 328fbb84-76c0-428d-a299-83801bf62814
 ---
 One of the great things about Statamic is that everything is flat files which means you can put all your content in version control.
@@ -24,7 +24,7 @@ content/collections/orders/*.md
 content/collections/customers/*.md
 ```
 
-Remember to backup your orders & collections though, especially now that they're not in version control. You could use something like [file backups on Snapshooter](https://snapshooter.io/?via=duncan) to back them up on a regular basis.
+Remember to backup your orders & collections though, especially now that they're not in version control. You could use something like [file backups on Snapshooter](https://snapshooter.io?via=duncanmcclean) to back them up on a regular basis.
 
 ## 3. Use a traditional database
 The third option would be to use a traditional, old-school database, like you would with any other e-commerce solution.
