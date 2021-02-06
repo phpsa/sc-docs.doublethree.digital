@@ -4,6 +4,9 @@ tree:
   -
     entry: c0af5012-07ae-4deb-b61d-1d4df22f43b4
   -
+    title: Changelog
+    url: /v2.1/changelog
+  -
     title: 'Getting Started'
     children:
       -

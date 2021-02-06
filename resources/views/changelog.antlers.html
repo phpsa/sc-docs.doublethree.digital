@@ -1,0 +1,19 @@
+<div class="mb-4">
+    <h1 class="text-4xl font-bold font-sc">{{ title }}</h1>
+</div>
+
+{{ releases }}
+    <div class="border-b border-gray-200 mb-6 py-4">
+        <h2 id="{{ name }}" class="text-3xl font-semibold">
+            <a href="#{{ name }}">
+                {{ name }}
+            </a>
+        </h2>
+
+        <h3 class="text-sm text-gray-500 mb-4">Released on {{ date format="Y-m-d" }}</h3>
+
+        <div class="prose">
+            {{ body | desanitize }}
+        </div>
+    </div>
+{{ /releases }}

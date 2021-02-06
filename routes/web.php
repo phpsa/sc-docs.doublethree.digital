@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChangelogController;
 use Illuminate\Support\Facades\Route;
 use Statamic\Facades\Site;
 use Statamic\Statamic;
@@ -39,6 +40,8 @@ Statamic::booted(function () {
             'title' => 'Search results',
             'site' => $site,
         ]);
+
+        Route::get($site->url().'/changelog', [ChangelogController::class, 'show']);
     }
 });
 
