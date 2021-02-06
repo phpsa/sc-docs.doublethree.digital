@@ -53,7 +53,11 @@
 }
 
 .prose a {
-    @apply font-semibold;
+    @apply font-semibold text-sc-dark-blue;
+}
+
+.prose a:hover {
+    @apply text-sc-dark-light;
 }
 
 [x-cloak] {

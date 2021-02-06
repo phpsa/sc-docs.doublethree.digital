@@ -65,7 +65,9 @@
 
         <header class="bg-sc-dark-blue">
             <div class="max-w-4xl mx-auto py-4 flex items-center justify-between">
-                <img src="/img/simple-commerce.svg" alt="Simple Commerce" width="200px">
+                <a href="/">
+                    <img src="/img/simple-commerce.svg" alt="Simple Commerce" width="200px">
+                </a>
 
                 <form class="max-w-sm">
                     <input
@@ -99,7 +101,7 @@
 
                             <span class="block mb-6"></span>
                         {{ else }}
-                            <li class="mb-2 text-gray-700"><a href="{{ url }}">{{ title }}</a></li>
+                            <li class="mb-2 text-gray-700 {{ if is_current }} font-medium {{ /if }}"><a href="{{ url }}">{{ title }}</a></li>
                         {{ /if }}
                     {{ /nav:pages }}
                 </ul>
