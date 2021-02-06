@@ -36,10 +36,10 @@ Route::name('current_release_redirects')->group(function () {
 
 Statamic::booted(function () {
     foreach (Site::all() as $site) {
-        Route::statamic($site->url().'/search', 'search', [
-            'title' => 'Search results',
-            'site' => $site,
-        ]);
+        // Route::statamic($site->url().'/search', 'search', [
+        //     'title' => 'Search results',
+        //     'site' => $site,
+        // ]);
 
         Route::get($site->url().'/changelog', [ChangelogController::class, 'show']);
     }
