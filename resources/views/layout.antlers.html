@@ -59,7 +59,69 @@
         <meta name="docsearch:version" content="{{ site:name ?? 'v2.2' }}" />
 </head>
     <body>
-        <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
+        <div class="bg-sc-dark-light w-full py-2">
+            <p class="text-sc-dark-blue font-semibold text-center">Simple Commerce v2.2 has just been released. <a href="/v2.2/upgrade-guide">Upgrade now!</a></p>
+        </div>
+
+        <header class="bg-sc-dark-blue">
+            <div class="max-w-4xl mx-auto py-4 flex items-center justify-between">
+                <img src="/img/simple-commerce.svg" alt="Simple Commerce" width="200px">
+
+                <form class="max-w-sm">
+                    <input
+                        id="search-box"
+                        type="search"
+                        class="w-64 rounded-full px-4 py-2 focus:outline-none border-2 border-transparent focus:border-sc-dark-light"
+                        placeholder="Search..."
+                    >
+                </form>
+            </div>
+        </header>
+
+        <div class="max-w-5xl mx-auto py-8 flex">
+            <aside class="max-w-xs mr-16">
+                {{ partial:version_dropdown }}
+
+                <ul class="mt-6">
+                    {{ nav:pages }}
+                        {{ if !url }}
+                            <li
+                                class="font-semibold text-sc-dark-blue uppercase text-sm mb-2 mt-6"
+                            >{{ title }}</li>
+
+                            {{ children }}
+                                <li class="mb-1">
+                                    <a class="text-gray-700 {{ if is_current }} font-medium {{ /if }}" href="{{ url }}">
+                                        {{ title }}
+                                    </a>
+                                </li>
+                            {{ /children }}
+
+                            <span class="block mb-6"></span>
+                        {{ else }}
+                            <li class="mb-2 text-gray-700"><a href="{{ url }}">{{ title }}</a></li>
+                        {{ /if }}
+                    {{ /nav:pages }}
+                </ul>
+            </aside>
+
+            <div class="max-w-2xl px-4">
+                {{ template_content }}
+            </div>
+        </div>
+
+        <footer class="bg-sc-dark-blue py-6 mt-12">
+            <div class="mx-8 flex items-center justify-between">
+                <p class="text-white font-medium text-sm">Copyright {{ now format="Y" }} &copy <a href="https://duncanm.dev" target="_blank">Duncan McClean</a></p>
+
+                <div class="flex flex-row items-center space-x-6">
+                    <a href="/github" target="_blank">{{ svg src="/img/github.svg" class="h-6 w-auto" }}</a>
+                </div>
+            </div>
+        </footer>
+
+
+        {{# <div x-data="{ sidebarDisplayed: false }" class="flex overflow-hidden h-screen">
             <aside :class="{ 'hidden' : !sidebarDisplayed, 'absolute top-0 bottom-0 right-0 left-0 w-full h-screen overflow-hidden z-20' : sidebarDisplayed }" class="hidden lg:block lg:w-2/12 font-sc">
                 {{ partial:sidebar }}
             </aside>
@@ -83,7 +145,7 @@
                     </div>
                 </footer>
             </div>
-        </div>
+        </div> #}}
 
         <script src="/js/site.js"></script>
         <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>

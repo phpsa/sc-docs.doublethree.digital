@@ -6,6 +6,17 @@
 
 @import "prism.css";
 
+.prose {
+    max-width: auto!important;
+}
+
+.prose h2 {
+    @apply text-3xl;
+
+    margin-top: 1.8em!important;
+    margin-bottom: 0.5em!important;
+}
+
 .prose code::before, .prose code::after {
     content: ""!important;
 }
