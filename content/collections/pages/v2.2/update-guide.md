@@ -5,7 +5,7 @@ origin: c0af5012-07ae-4deb-b61d-1d4df22f43b4
 ---
 ## Updating from v2.1 to v2.2
 
-We've tried to document as many of the breaking changes as we can. Although, if you have any custom integrations into Simple Commerce, we'd recommend that you [review the changes](https://github.com/doublethreedigital/simple-commerce/compare/master...v2.2-dev).
+I've tried to document as many of the breaking changes as I can. Although, if you have any custom integrations into Simple Commerce, I'd recommend that you [review the changes](https://github.com/doublethreedigital/simple-commerce/compare/master...v2.2-dev).
 
 ```
 composer update doublethreedigital/simple-commerce:^2.2
@@ -29,7 +29,7 @@ It will continue to function for now, however the plan is to remove it completel
 
 #### Changes to Repositories
 
-Simple Commerce used to split code into Repositories, we have re-structured these in v2.2 to cleanup the codebase for future development.
+Simple Commerce used to split code into Repositories but it's been re-structured in v2.2, in order to cleanup the codebase for future development.
 
 There's a few changes that you may need to make:
 

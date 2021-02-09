@@ -8,7 +8,7 @@ Most of the available configuration options are documented alongside the feature
 
 ## Site configuration
 
-We've moved our documentation about configuring sites over to a new [Multi-site](/v2.2/multi-site) page.
+I've moved our documentation about configuring sites over to a new [Multi-site](/v2.2/multi-site) page.
 
 ## Collections & Taxonomies
 ```php
@@ -36,7 +36,7 @@ We've moved our documentation about configuring sites over to a new [Multi-site]
 ],
 ```
 
-If you'd like to change the collections and handles used for certain things in Simple Commerce, we allow you to do that. Just change the appropriate value to the handle of the collection you'd like to use instead.
+If you'd prefer to use different names for collections that what Simple Commerce ships with, you can do that. Simply update the appropriate value to the handle of the collection/taxonomy you'd like to use.
 
 For example, to use a collection called `Discounts`, with a handle of `discounts` for your coupons, you could configure that like this:
 
@@ -48,7 +48,7 @@ For example, to use a collection called `Discounts`, with a handle of `discounts
 ```
 
 ## Various other options
-There's a few smaller configuration options too. We've documented them in some bullet points below.
+There's a few smaller configuration options too. I've documented them in some bullet points below.
 
 * `cart_key` will determine the session key used for a customers' cart.
 * `minimum_order_number` allows you to set the minimum for order numbers to start at. By default it is `2000`, so order title's will be `#2000`, `#2001`, etc

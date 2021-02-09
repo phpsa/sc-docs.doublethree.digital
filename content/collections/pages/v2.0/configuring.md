@@ -52,7 +52,7 @@ Let's walk through some of the configuration options you have with each site.
 
 * The first option is currency, you can use a variety of different currencies in Simple Commerce. To configure one, just put in the three letter currency code and it should be picked up.
 
-* Tax is another thing you can configure. In the default configuration, we have tax setup at 20% and we have it set so our product prices include tax. You can obviusly change this to whatever you'd like.
+* Tax is another thing you can configure. The default configuration has the tax rate setup at 20% and that the product prices include tax. You can obviusly change this to whatever you'd like.
 
 * Each site can have its own set of shipping methods. A lot of sites have custom shipping rules, so we recommend you build one specifically for your site. <!-- TODO: write documentation on doing this -->
 

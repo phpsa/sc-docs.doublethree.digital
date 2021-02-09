@@ -29,7 +29,7 @@ As with anything, you can configure your cart driver in your Simple Commerce con
 
 To change the driver, just replace the `driver` class with the class for whatever driver you wish to use.
 
-You can also configure the key that is used. 
+You can also configure the key that is used.
 
 ## Available Drivers
 
@@ -37,8 +37,6 @@ Simple Commerce provides two cart drivers out of the box.
 
 * Session Driver
 * Cookie Driver
-
-For any new sites, we'd recommend using the cookie driver as it will store the customer's cart for longer than a session does.
 
 ## Building your own driver
 If you don't want to use the session or a cookie for storing your customer's cart ID, you can build your own driver.

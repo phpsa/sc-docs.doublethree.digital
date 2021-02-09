@@ -10,11 +10,11 @@ Submitting via AJAX is totally possible, it just takes a little bit more effort 
 
 ## Endpoints
 
-Each of the [form tags](https://sc-docs.doublethree.digital/v2.2/tags#form-tags) point to different endpoints. 
+Each of the [form tags](https://sc-docs.doublethree.digital/v2.2/tags#form-tags) point to different endpoints.
 
 The easiest way to figure out which endpoint you want to use in place of a form tag would be to use the form tag temporarily in your template and grab the outputted form `action`.
 
-If you're super duper interested, here's [the routes file](https://github.com/doublethreedigital/simple-commerce/blob/master/routes/actions.php), in case there's any 'hidden' routes we don't provide a tag for (spoiler: there's a couple).
+If you're super duper interested, here's [the routes file](https://github.com/doublethreedigital/simple-commerce/blob/master/routes/actions.php), in case there's any 'hidden' routes that I've not written a tag for. (Spoiler alert: there's a few)
 
 You can send any of the same parameters to the endpoints as documented in the respective tag.
 
