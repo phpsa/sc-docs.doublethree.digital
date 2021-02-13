@@ -60,6 +60,14 @@
     @apply text-sc-dark-light;
 }
 
+.prose a code {
+    @apply no-underline text-auto font-normal;
+}
+
+.prose code {
+    @apply bg-gray-100 p-1;
+}
+
 [x-cloak] {
     @apply hidden;
 }

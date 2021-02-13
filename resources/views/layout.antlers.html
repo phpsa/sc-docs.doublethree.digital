@@ -89,7 +89,7 @@
 
                             {{ children }}
                                 <li class="mb-1">
-                                    <a class="text-gray-700 {{ if is_current }} font-medium {{ /if }}" href="{{ url }}">
+                                    <a class="text-gray-700 hover:text-sc-dark-light {{ if is_current }} font-semibold {{ /if }}" href="{{ url }}">
                                         {{ title }}
                                     </a>
                                 </li>
@@ -97,7 +97,7 @@
 
                             <span class="block mb-6"></span>
                         {{ else }}
-                            <li class="mb-2 text-gray-700 {{ if is_current }} font-medium {{ /if }}"><a href="{{ url }}">{{ title }}</a></li>
+                            <li class="mb-2 text-gray-800 hover:text-sc-dark-light {{ if is_current }} font-semibold {{ /if }}"><a href="{{ url }}">{{ title }}</a></li>
                         {{ /if }}
                     {{ /nav:pages }}
                 </ul>
