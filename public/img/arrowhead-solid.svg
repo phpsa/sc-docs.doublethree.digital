@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="15px" viewBox="0 0 14 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="10px" height="11px" viewBox="0 0 10 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
     <title>arrowhead-solid</title>
     <desc>Created with Sketch.</desc>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrowhead-solid" transform="translate(7.500000, 7.000000) rotate(-90.000000) translate(-7.500000, -7.000000) translate(0.000000, 0.000000)" fill="#010101" fill-rule="nonzero">
-            <path d="M6.08,13.1 C7.97,13.25 14.85,2.37 14.08,1.51 C13.31,0.65 1.18,-0.6 0.06,0.34 C-0.62,0.92 4.39,13 6.08,13.1 Z" id="Path"></path>
+        <g id="arrowhead-solid" fill="#00CDE0" fill-rule="nonzero">
+            <g transform="translate(4.833333, 5.333333) rotate(-90.000000) translate(-4.833333, -5.333333) translate(-0.166667, 0.833333)" id="Path">
+                <path d="M4.05333333,8.73333333 C5.31333333,8.83333333 9.9,1.58 9.38666667,1.00666667 C8.87333333,0.433333333 0.786666667,-0.4 0.04,0.226666667 C-0.413333333,0.613333333 2.92666667,8.66666667 4.05333333,8.73333333 Z"></path>
+            </g>
         </g>
     </g>
 </svg>
