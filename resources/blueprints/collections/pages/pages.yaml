@@ -12,13 +12,6 @@ sections:
           validate:
             - required
       -
-        handle: intro
-        field:
-          display: Intro
-          type: textarea
-          icon: textarea
-          listable: hidden
-      -
         handle: content
         field:
           type: markdown
