@@ -76,9 +76,17 @@ class Toc extends Modifier
             }
 
             if ($add_id) {
+                if ($lvl == '2' || $lvl == 2) {
+                    $fontSize = 'text-2xl';
+                } elseif ($lvl == '3' || $lvl == 3) {
+                    $fontSize = 'text-xl pl-1';
+                } else {
+                    $fontSize = '';
+                }
+
                 $content = substr_replace(
                     $content,
-                    '<h'.$lvl.' id="'.$anchor.'"'.$heading[2].' class="relative flex" style="left: -25px;">'.'<a class="text-sc-dark-light text-2xl mr-2 mt-1 no-underline" href="#'.$anchor.'">#</a>'.$heading[3].'</h'.$lvl.'>',
+                    '<h'.$lvl.' id="'.$anchor.'"'.$heading[2].' class="relative" style="left: -25px;">'.'<a class="text-sc-dark-light '.$fontSize.' mr-2 mt-1 no-underline" href="#'.$anchor.'">#</a>'.$heading[3].'</h'.$lvl.'>',
                     strpos($content, $heading[0]),
                     strlen($heading[0])
                 );

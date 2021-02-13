@@ -40,18 +40,6 @@
     border-radius: none;
 }
 
-.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
-    content: '';
-}
-
-.prose blockquote {
-    @apply border-l-4 border-sc-dark-blue not-italic font-medium;
-}
-
-.prose blockquote strong {
-    @apply font-bold;
-}
-
 .prose a {
     @apply font-semibold text-sc-dark-blue;
 }
@@ -61,11 +49,35 @@
 }
 
 .prose a code {
-    @apply no-underline text-auto font-normal;
+    @apply no-underline font-normal;
+}
+
+.prose blockquote p:first-of-type::before, .prose blockquote p:last-of-type::after {
+    content: '';
+}
+
+.prose blockquote {
+    @apply border-l-4 border-sc-dark-light bg-sc-dark-blue text-white not-italic font-medium;
+}
+
+.prose blockquote p {
+    @apply py-2;
+}
+
+.prose blockquote strong {
+    @apply font-bold text-white;
+}
+
+.prose blockquote a {
+    @apply text-white;
 }
 
 .prose code {
     @apply bg-gray-100 p-1;
+}
+
+.prose img {
+    @apply p-4 bg-sc-dark-blue;
 }
 
 [x-cloak] {
