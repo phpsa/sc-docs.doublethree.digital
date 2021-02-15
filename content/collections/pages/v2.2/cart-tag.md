@@ -75,7 +75,7 @@ The tag itself requires an `item` parameter which should be the ID of the specfi
 {{ /sc:cart:updateItem }}
 ```
 
-### Remove Cart Item
+## Remove Cart Item
 
 This tag allows you to remove an item from the cart. It's a [form tag](/v2.2/tags#form-tags) and the only required parameter is on the tag itself: the `item` parameter should be the ID or the specific cart item you wish to remove from the cart.
 
@@ -85,7 +85,7 @@ This tag allows you to remove an item from the cart. It's a [form tag](/v2.2/tag
 {{ /sc:cart:removeItem }}
 ```
 
-### Update Cart
+## Update Cart
 
 This tag can be used to update any field values in the cart, kinda like [Workshop](https://statamic.com/addons/statamic/workshop), but just for carts. You can send whatever parameters you want, just ensure they are added to the entry blueprint for your orders.
 
