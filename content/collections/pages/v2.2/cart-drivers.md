@@ -4,7 +4,7 @@ id: ac4252bd-cc1b-4218-8ed1-909f4827a82c
 ---
 From v2.2 onwards, Simple Commerce provides a concept of 'Cart Drivers'.
 
-Cart Drivers allow you to swap out how the current user's cart ID is stored. For example, by default, the cart ID is stored in the user's session. However, that can easilly be swapped out for being stored as a cookie instead.
+Cart Drivers allow you to swap out how the current user's cart ID is stored. For example, by default, the cart ID is stored as a cookie in the user's browser. However, that can easilly be swapped out for being stored inside the user's session instead.
 
 ## Configuring
 
@@ -22,12 +22,12 @@ As with anything, you can configure your cart driver in your Simple Commerce con
  */
 
 'cart' => [
-  'driver' => \DoubleThreeDigital\SimpleCommerce\Orders\Cart\Drivers\SessionDriver::class,
+  'driver' => \DoubleThreeDigital\SimpleCommerce\Orders\Cart\Drivers\CookieDriver::class,
   'key' => 'simple-commerce-cart',
 ],
 ```
 
-To change the driver, just replace the `driver` class with the class for whatever driver you wish to use.
+To change the driver, just replace the `driver` class with the class name for whichever driver you wish to use.
 
 You can also configure the key that is used.
 
