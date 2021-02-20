@@ -30,7 +30,13 @@
 }
 
 .prose ul li {
-    @apply -ml-1 pl-1;
+    @apply ml-4 pl-1;
+}
+
+@screen md {
+    .prose ul li {
+        @apply -ml-1 pl-1;
+    }
 }
 
 .prose ul li::before {
@@ -81,7 +87,7 @@
 }
 
 [x-cloak] {
-    @apply hidden;
+    display: none !important;
 }
 
 .algolia-autocomplete {
