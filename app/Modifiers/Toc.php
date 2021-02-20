@@ -86,7 +86,7 @@ class Toc extends Modifier
 
                 $content = substr_replace(
                     $content,
-                    '<h'.$lvl.' id="'.$anchor.'"'.$heading[2].' class="relative" style="left: -25px;">'.'<a class="text-sc-dark-light '.$fontSize.' mr-2 mt-1 no-underline" href="#'.$anchor.'">#</a>'.$heading[3].'</h'.$lvl.'>',
+                    '<h'.$lvl.' id="'.$anchor.'"'.$heading[2].' class="relative md:left-m25">'.'<a class="hidden md:inline-block text-sc-dark-light '.$fontSize.' mr-2 mt-1 no-underline" href="#'.$anchor.'">#</a>'.$heading[3].'</h'.$lvl.'>',
                     strpos($content, $heading[0]),
                     strlen($heading[0])
                 );

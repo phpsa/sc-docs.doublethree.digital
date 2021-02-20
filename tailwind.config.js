@@ -19,6 +19,9 @@ module.exports = {
             },
             fontFamily: {
                 'sc': ['Exo', ...defaultTheme.fontFamily.sans]
+            },
+            inset: {
+                'm25': '-25px',
             }
         },
     },
