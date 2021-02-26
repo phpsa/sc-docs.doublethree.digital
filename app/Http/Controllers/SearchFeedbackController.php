@@ -24,7 +24,7 @@ class SearchFeedbackController extends Controller
         file_put_contents($searchLogPath, $log);
 
         return [
-            'message' => "What a sunny day outside ☀️"
+            'message' => "What a sunny day outside..."
         ];
     }
 }

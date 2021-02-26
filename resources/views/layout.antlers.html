@@ -62,7 +62,6 @@
         <script>
             function doStuff(query) {
                 if (query == '' || query.length <= 3) {
-                    console.log('Skipping as too short')
                     return
                 }
 
@@ -74,10 +73,10 @@
                     method: 'POST',
                     body: data,
                 }).then((response) => {
-                    console.log(response)
+                    // Schweet...
+                }).catch((error) => {
+                    // No biggy.
                 })
-
-                // console.log(query)
             }
         </script>
 
