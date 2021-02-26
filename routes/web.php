@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ChangelogController;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Statamic\Facades\Site;
 use Statamic\Statamic;
@@ -51,3 +52,28 @@ Route::statamic('/sitemap.xml', 'sitemap', [
     'layout' => null,
     'content_type' => 'xml',
 ]);
+
+/**
+ * This route will log search queries made in the
+ * documentation, so popular requests are documented.
+ */
+Route::post('/search-feedback', function (Request $request) {
+    $searchLogPath = storage_path('app/searches.json');
+
+    if (! file_exists($searchLogPath)) {
+        file_put_contents($searchLogPath, json_encode([]));
+    }
+
+    $log = collect(json_decode(file_get_contents($searchLogPath), true))
+        ->merge([
+            $request->searchQuery,
+        ])
+        ->unique()
+        ->toJson(JSON_PRETTY_PRINT);
+
+    file_put_contents($searchLogPath, $log);
+
+    return [
+        'message' => "What a sunny day outside..."
+    ];
+});
