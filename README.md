@@ -1,4 +1,4 @@
-![Screenshot](https://raw.githubusercontent.com/doublethreedigital/sc-docs.doublethree.digital/master/banner.png)
+![Banner](https://raw.githubusercontent.com/doublethreedigital/sc-docs.doublethree.digital/master/banner.png)
 
 ## Documentation
 
