@@ -1,4 +1,4 @@
-![Screenshot](https://raw.githubusercontent.com/doublethreedigital/simple-commerce/master/banner.png)
+![Screenshot](https://raw.githubusercontent.com/doublethreedigital/sc-docs.doublethree.digital/master/banner.png)
 
 # Simple Commerce Documentation
 This is the repository that contains the [Simple Commerce](https://github.com/doublethreedigital/simple-commerce) documentation.
