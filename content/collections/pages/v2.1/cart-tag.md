@@ -7,7 +7,7 @@ id: 5fa3f4ee-5077-418f-9d07-95414d2544b4
 
 `{{ sc:cart }}` returns an augmented version of the Cart entry.
 
-```html
+```handlebars
 {{ sc:cart }}
   	<h2>Order {{ title }}</h2>
   	<p>Your order has been successful and will be fulfilled shortly.</p>
@@ -20,7 +20,7 @@ This is probably the most common use case for the `sc:cart` tag, fetching items 
 
 The variables available in this tag are also augmented. Allowing you to get data on the attached product, like this: `{{ product:short_description }}`.
 
-```html
+```handlebars
 {{ sc:cart:items }}
 	{{ product:title }} - {{ quantity }} - {{ total }}
 {{ /sc:cart:items }}
@@ -32,7 +32,7 @@ To get a count of the items in the customers' cart, use `{{ sc:cart:count }}`.
 
 This tag allows you to check if the current customer has a cart attached to them. It'll return a boolean, meaning you can use it in one of Antlers' if statements.
 
-```html
+```handlebars
 {{ if {sc:cart:has} === false }}
   	<p>There's nothing in your cart. <a href="#">Start shopping</a>.</p>
 {{ /if }}
@@ -57,7 +57,7 @@ This tag allows you to add a product/variant to your cart. It's a [form tag](/v2
 * `variant` - If applicable, the key of the variant you wish to add to the cart. Bear in mind, you will also need to provide the `product` with this.
 * `quantity` - The quantity of the cart item you're adding.
 
-```html
+```handlebars
 {{ sc:cart:addItem }}
   <input type="hidden" name="product" value="{{ id }}">
   <input type="number" name="quantity" value="2">
@@ -70,7 +70,7 @@ With this tag, you can update a specific item in your cart. It's a [form tag](/v
 
 The tag itself requires an `item` parameter which should be the ID of the specfic cart item you wish to update. You may then provide the parameters you wish to update on the item as input fields, like the below example:
 
-```html
+```handlebars
 {{ sc:cart:updateItem :item="id" }}
   <input type="number" name="quantity" value="2">
 {{ /sc:cart:updateItem }}
@@ -80,7 +80,7 @@ The tag itself requires an `item` parameter which should be the ID of the specfi
 
 This tag allows you to remove an item from the cart. It's a [form tag](/v2.1/tags#form-tags) and the only required parameter is on the tag itself: the `item` parameter should be the ID or the specific cart item you wish to remove from the cart.
 
-```
+```handlebars
 {{ sc:cart:removeItem :item="id" }}
   <button type="submit">Remove item from cart</button>
 {{ /sc:cart:removeItem }}
@@ -90,7 +90,7 @@ This tag allows you to remove an item from the cart. It's a [form tag](/v2.1/tag
 
 This tag can be used to update any field values in the cart, kinda like [Workshop](https://statamic.com/addons/statamic/workshop), but just for carts. You can send whatever parameters you want, just ensure they are added to the entry blueprint for your orders.
 
-```html
+```handlebars
 {{ sc:cart:update }}
   <input type="text" name="delivery_note">
 {{ /sc:cart:update }}
@@ -98,7 +98,7 @@ This tag can be used to update any field values in the cart, kinda like [Worksho
 
 > **🔥 Hot Tip:** If you want to also update the customer at the same time, something like the below should work. Remember the `email`, it's required.
 
-```html
+```handlebars
 <input type="text" name="customer[name]">
 <input type="email" name="customer[email]">
 ```
@@ -107,7 +107,7 @@ This tag can be used to update any field values in the cart, kinda like [Worksho
 
 If you want to empty all the items from the cart and start from scratch. You can use the `{{ sc:cart:empty }}` tag. It doesn't accept any parameters.
 
-```html
+```handlebars
 {{ sc:cart:empty }}
   <button>I messed up.. there's too much in my cart. I need a fresh start.</button>
 {{ /sc:cart:empty }}

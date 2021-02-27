@@ -7,7 +7,7 @@ This tag allows you to checkout the cart. Inside the tag, you can use any of the
 
 Like with the update cart tag, you can also pass information to the customer entry. Don't forget the `email` field though as it's required.
 
-```
+```handlebars
 {{ sc:checkout redirect="/thanks" }}
   {{ if is_paid }}
   <p>Checkout complete! <a href="{{ receipt_url }}">Download</a> your receipt.</p>

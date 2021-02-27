@@ -18,7 +18,7 @@ However, this solution is a bit fiddly to get setup with!
 ## 2. Don't use version control at all for orders and customers, just back them up instead
 If you don't want orders and customer sitting in version control at all, you can just ignore them in your site's `.gitignore` file.
 
-```
+```s
 content/collections/orders/*.md
 content/collections/customers/*.md
 ```

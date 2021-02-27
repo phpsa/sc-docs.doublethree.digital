@@ -9,7 +9,7 @@ Simple Commerce ~~has~~ will have built-in support for popular payment gateways,
 
 Gateways are configured in your `config/simple-commerce.php` file. Like so:
 
-```
+```php
 'gateways' => [
     \DoubleThreeDigital\SimpleCommerce\Gateways\DummyGateway::class => [],
 ],
@@ -34,7 +34,7 @@ We include an example of the payment form for the Dummy gateway in the [Simple C
 
 Stripe is the gateway we recommend, mostly because its modern and easy to use for both merchants and customers. To use the Stripe gateway in your store, add the Stripe class, followed by your Stripe API details as settings.
 
-```
+```php
 'gateways' => [
         \DoubleThreeDigital\SimpleCommerce\Gateways\StripeGateway::class => [
             'key' => env('STRIPE_KEY'),
@@ -53,7 +53,7 @@ Sometimes you'll want to use a gateway that Simple Commerce doesn't provide out 
 
 1. Create a gateway from a stub, you can copy over the stub by running `php please make:gateway {gateway name}`. The gateway will be created in your `App\Gateways` folder.
 
-```
+```php
 <?php
 
 namespace App\Gateways;

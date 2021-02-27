@@ -10,7 +10,7 @@ Every store can have any number of shipping methods. For example, you could use 
 
 Simple Commerce doesn't come with any shipping methods out of the box so you'll need to write your own. We do, however have a command you can use to generate the boilerplate for a shipping method.
 
-```
+```s
 php please make:shipping-method {method name}
 ```
 
@@ -81,7 +81,7 @@ During the cart/checkout flow, you'll want to do 2 things: first, let the custom
 
 Let's start with the letting the user enter their shipping address. In our starter kit, we have this on the [initial cart page](https://github.com/doublethreedigital/simple-commerce-starter/blob/master/resources/views/cart.antlers.html).
 
-```
+```handlebars
 {{ sc:cart:update }}
     <input type="text" name="shipping_name" placeholder="Name" value="{{ old:shipping_name }}">
     <input type="text" name="shipping_address" placeholder="Address" value="{{ old:shipping_address }}">
@@ -103,7 +103,7 @@ When submitted, that form will fill in the appropriate address fields.
 
 After the customer has entered their address we can find available shipping methods for them and allow them to select which one they'd like to use. Again, we can use the `{{ sc:cart:update }}` tag to manage this. We also do this on [our starter kit](https://github.com/doublethreedigital/simple-commerce-starter/blob/master/resources/views/cart-shipping.antlers.html).
 
-```
+```handlebars
 {{ sc:cart:update }}
     <p>Please select a shipping method for your order.</p>
 

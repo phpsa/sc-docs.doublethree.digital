@@ -7,7 +7,7 @@ origin: c0af5012-07ae-4deb-b61d-1d4df22f43b4
 
 I've tried to document as many of the breaking changes as I can. Although, if you have any custom integrations into Simple Commerce, I'd recommend that you [review the changes](https://github.com/doublethreedigital/simple-commerce/compare/master...v2.2-dev).
 
-```
+```s
 composer update doublethreedigital/simple-commerce:^2.2
 ```
 
