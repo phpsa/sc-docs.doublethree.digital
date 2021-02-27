@@ -1,7 +1,16 @@
 ![Screenshot](https://raw.githubusercontent.com/doublethreedigital/sc-docs.doublethree.digital/master/banner.png)
 
-# Simple Commerce Documentation
-This is the repository that contains the [Simple Commerce](https://github.com/doublethreedigital/simple-commerce) documentation.
+## Documentation
+
+This repository contains the source code & content for the Simple Commerce documentation site, available at [sc-docs.doublethree.digital](https://sc-docs.doublethree.digital).
+
+## Contributing
+
+If you wish to contribute to the documentation, either for a typo or to fix a small design bug, please submit a pull request. All contributions are welcome (I'm only one person after all!).
+
+The content of the documentation lives in `content/collections/pages`. The `pages` directory has a sub-directory for each version of Simple Commerce. When contributing, please update the latest version of the documentation.
+
+The front-end of the site lives in the `resources/views` directory. The site uses Tailwind CSS and Alpine.js.
 
 ## Local Development
 
@@ -10,21 +19,15 @@ This is the repository that contains the [Simple Commerce](https://github.com/do
 3. Install and compile front-end assets with `npm install && npm run dev`
 4. And copy over your new `.env` file... `cp .env.example .env && php artisan key:generate`
 
-## Contributing
+## Versioned Docs
 
-If you find a typo or something that's not documented, please either report it as an issue or fix it with a pull request. All contributions are welcome!
+You might have noticed that the docs site is split up into versions. This means we can have different versions of documentation for the different versions of Simple Commerce. To allow for this, the site uses Statamic's Multi-site feature, where each version has it's own 'site'.
 
-## Versioning
-The Documentation is seperated into versions so we can have different versions of documentation between Simple Commerce releases. For this functionality, a site is configured per release. For example, there's one for `v2.0`, another for `v2.1` and so on.
+Here's a checklist for when I need to create a new version of the docs:
 
-When it's time to add a new release to the documentation, follow these steps:
-
-* Create a new site in `config/statamic/sites.php`, with the latest release being at the top of the array.
-* Go to each of the entries you wish to have versions of and copy the content to the latest release site.
-* In the `routes/web.php` file, change references to the previous release to the new one. The latest release should only be hard coded in a single place but best to double check.
-
-## Resources
-
-* [Documentation](https://sc-docs.doublethree.digital)
-* [Simple Commerce Issues](https://github.com/doublethreedigital/simple-commerce/issues)
-* [Simple Commerce Discussions](https://github.com/doublethreedigital/simple-commerce/discussions)
+* [ ] Create new site in `config/statamic/sites.php`
+* [ ] In the CP, copy over all the entries needed for the new version.
+* [ ] In the `routes/web.php` file, replace `v2.x` with the new version name.
+* [ ] Find and replace for any references to the previous version.
+* [ ] Submit a pull request to Algolia DocSearch for new version
+* [ ] Add the new version to the front-end version selector
