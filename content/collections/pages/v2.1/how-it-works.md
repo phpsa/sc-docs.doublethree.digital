@@ -10,7 +10,7 @@ Under the hood all of your products, orders and coupons are just normal Statamic
 
 For example, you can use [Statamic's collection tag](https://statamic.dev/tags/collection)
 
-```
+```handlebars
 {{ collection:products }}
 	<h2>{{ title }}</h2>
     <p>{{ description }}</p>
@@ -30,7 +30,7 @@ Antlers is the templating language built into Statamic. We ❤️ it. Simple Com
 
 For example: to add an item to your cart, you can use a Simple Commerce tag which will create a form that points to one of Simple Commerce's endpoints. It means that something like this...
 
-```
+```handlebars
 {{ sc:cart:addItem }}
     <input type="hidden" name="product" value="{{ id }}">
     <input type="hidden" name="quantity" value="1">
@@ -40,7 +40,7 @@ For example: to add an item to your cart, you can use a Simple Commerce tag whic
 
 Would be output like this:
 
-```
+```handlebars
 <form action="/!/simple-commerce/cart-items" method="post">
     <input type="hidden" name="product" value="84b28c73-3a04-478f-9447-68df026c44fe">
     <input type="hidden" name="quantity" value="1">

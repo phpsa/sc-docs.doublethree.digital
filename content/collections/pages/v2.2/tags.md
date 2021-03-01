@@ -18,7 +18,7 @@ Some Simple Commerce tags output `<form>` elements that submit to Simple Commerc
 
 * `redirect` - the URL where you'd like to redirect the user after a successful form submission.
 
-```html
+```handlebars
 {{ sc:cart:addItem redirect="/cart" }}
     <input type="hidden" name="product" value="{{ id }}">
     <input type="hidden" name="quantity" value="1">
@@ -38,6 +38,6 @@ If you'd prefer not to use the shorthand of `sc` in your tags, you can also use 
 
 This could be used to give more context of the tag in use to make it clear it's dealing with Simple Commerce.
 
-```html
+```handlebars
 {{ simple-commerce:countries }}
 ```

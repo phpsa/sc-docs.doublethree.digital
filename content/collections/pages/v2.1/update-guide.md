@@ -7,7 +7,7 @@ origin: 1322d92b-74f9-485b-977e-ce981ec83ddb
 
 We've tried to document as many of the breaking changes as we can. Although, if you have any custom integrations into Simple Commerce, we'd recommend that you [review the changes](https://github.com/doublethreedigital/simple-commerce/compare/master...v2.1-dev).
 
-```
+```s
 composer update doublethreedigital/simple-commerce:^2.1
 ```
 
@@ -97,7 +97,7 @@ As well as changes to the methods, remember to add in the new `webhook` method a
 ### Shipping Method Updates (breaking)
 Shipping Method's haven't been updated hugely, it's just a small change to some of the method signatures. Review your shipping method against the Shipping Method interface:
 
-```
+```php
 <?php
 
 namespace DoubleThreeDigital\SimpleCommerce\Contracts;
@@ -120,11 +120,11 @@ interface ShippingMethod
 ### Translations and Views
 If you published the Simple Commerce translations and views in v2.0, we recommend re-publishing them after updating to v2.1.
 
-```
+```s
 php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\ServiceProvider"
 ```
 
-## API Changes 
+## API Changes
 The namespaces of some of the API classes have been changes. If you're referencing them anywhere in your code, please review this list and change them.
 
 * `DoubleThreeDigital\SimpleCommerce\Countries` -> `DoubleThreeDigital\SimpleCommerce\Data\Countries`

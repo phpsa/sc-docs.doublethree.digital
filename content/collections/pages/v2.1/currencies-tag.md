@@ -5,7 +5,7 @@ id: b76eadd3-f1a5-4e73-9390-9519a3dcc18c
 ---
 This tag lets you loop through currencies.
 
-```
+```handlebars
 {{ sc:currencies }}
   {{ name }} - {{ symbol }}
 {{ /sc:currencies }}

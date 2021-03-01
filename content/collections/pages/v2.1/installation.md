@@ -16,7 +16,7 @@ We recommend installing Simple Commerce via the command line instead of through 
 
 **1.** Install Simple Commerce with Composer
 
-```
+```s
 composer require doublethreedigital/simple-commerce
 ```
 

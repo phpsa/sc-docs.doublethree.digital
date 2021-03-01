@@ -16,7 +16,7 @@ While you can install Simple Commerce via the Control Panel, I'd recomend instal
 
 **1.** Install Simple Commerce with Composer
 
-```
+```s
 composer require doublethreedigital/simple-commerce
 ```
 

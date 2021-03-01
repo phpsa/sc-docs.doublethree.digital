@@ -9,7 +9,7 @@ Simple Commerce provides a bunch of tags to help you to integrate it inside your
 ### The whole cart
 Gets the customer's cart so you can get details from it. Say you wanted the id of the cart for some reason, here's how that would work.
 
-```
+```handlebars
 {{ sc:cart }}
  <p>The ID of your cart is {{ id }}</p>
 {{ /sc:cart }}
@@ -18,7 +18,7 @@ Gets the customer's cart so you can get details from it. Say you wanted the id o
 ### Cart Check
 This tag allows you to check whether or not the customer currently has a cart attached to their session, it returns a boolean.
 
-```
+```handlebars
 {{ if {sc:cart:has} === true }}
   ...
 {{ /if }}
@@ -27,7 +27,7 @@ This tag allows you to check whether or not the customer currently has a cart at
 ### Cart Items
 Returns a loop of all the items in the customer's cart.
 
-```
+```handlebars
 {{ sc:cart:items }}
   {{ quantity }}x {{ product:title }}
 {{ /sc:cart:items }}
@@ -36,7 +36,7 @@ Returns a loop of all the items in the customer's cart.
 ### Items Count
 Gives you a count of how many items are in the customer's cart.
 
-```
+```handlebars
 {{ sc:cart:count }}
 ```
 
@@ -44,7 +44,7 @@ Gives you a count of how many items are in the customer's cart.
 **Grand Total**
 Returns the total of all the other totals. In fact, there's two ways of doing it.
 
-```
+```handlebars
 This... {{ sc:cart:total }}
 
 Does exactly the same thing as this... {{ sc:cart:grand_total }}
@@ -53,35 +53,35 @@ Does exactly the same thing as this... {{ sc:cart:grand_total }}
 **Items Total**
 Returns the total of every item in the cart.
 
-```
+```handlebars
 {{ sc:cart:items_total }}
 ```
 
 **Shipping Total**
 Returns the shipping total of the cart.
 
-```
+```handlebars
 {{ sc:cart:shipping_total }}
 ```
 
 **Tax Total**
 Returns the tax total of the cart.
 
-```
+```handlebars
 {{ sc:cart:tax_total }}
 ```
 
 **Coupon Total**
 Returns the total of the coupons in the cart.
 
-```
+```handlebars
 {{ sc:cart:coupon_total }}
 ```
 
 ### Add Cart Item
 This tag allows you to add an item to your cart.
 
-```
+```handlebars
 {{ sc:cart:addItem }}
   <input type="hidden" name="product" value="{{ id }}">
   <input type="number" name="quantity" value="2">
@@ -91,7 +91,7 @@ This tag allows you to add an item to your cart.
 ### Update Cart Item
 This tag allows you to update the items in the cart.
 
-```
+```handlebars
 {{ sc:cart:updateItem :item="id" }}
   <input type="number" name="quantity" value="2">
 {{ /sc:cart:updateItem }}
@@ -100,7 +100,7 @@ This tag allows you to update the items in the cart.
 ### Remove Cart Item
 This tag allows you to remove an existing item from the cart.
 
-```
+```handlebars
 {{ sc:cart:removeItem :item="id" }}
   <button type="submit">Remove item from cart</button>
 {{ /sc:cart:removeItem }}
@@ -109,7 +109,7 @@ This tag allows you to remove an existing item from the cart.
 ### Update cart
 This tag allows you to update data in the cart. Any form inputs will automatically be saved to the order entry.
 
-```
+```handlebars
 {{ sc:cart:update }}
   <input type="text" name="delivery_note">
 {{ /sc:cart:update }}
@@ -117,7 +117,7 @@ This tag allows you to update data in the cart. Any form inputs will automatical
 
 > **Hot Tip:** If you want to also update the customer at the same time, something like the below should work. Remember the `email`, it's required.
 
-```
+```handlebars
 <input type="text" name="customer[name]">
 <input type="email" name="customer[email]">
 ```
@@ -125,7 +125,7 @@ This tag allows you to update data in the cart. Any form inputs will automatical
 ### Empty cart
 This tag removes all the items in the cart.
 
-```
+```handlebars
 {{ sc:cart:empty }}
   ...
 {{ /sc:cart:empty }}
@@ -136,7 +136,7 @@ This tag allows you to checkout the cart. Inside the tag, you can use any of the
 
 Like with the update cart tag, you can also pass information to the customer entry. Don't forget the `email` field though as it's required.
 
-```
+```handlebars
 {{ sc:checkout redirect="/thanks" }}
   {{ if is_paid }}
   <p>Checkout complete! <a href="{{ receipt_url }}">Download</a> your receipt.</p>
@@ -164,7 +164,7 @@ Like with the update cart tag, you can also pass information to the customer ent
 ### Cart's Coupon
 This tag lets you get the data for the coupon, if the customer has redeemed one for the cart.
 
-```
+```handlebars
 {{ sc:coupon }}
   Current coupon: {{ slug }}
 {{ /sc:coupon }}
@@ -173,7 +173,7 @@ This tag lets you get the data for the coupon, if the customer has redeemed one 
 ### Check if coupon has been redeemed
 This tag lets you check whether or not the customer has already redeemed a coupon.
 
-```
+```handlebars
 {{ if {sc:coupon:has} === true }}
   You've redeemed a coupon.
 {{ /if }}
@@ -182,7 +182,7 @@ This tag lets you check whether or not the customer has already redeemed a coupo
 ### Redeem a coupoon
 This tag lets you redeem a coupon.
 
-```
+```handlebars
 {{ sc:cart:redeem }}
   <input type="text" name="code">
 {{ /sc:cart:redeem }}
@@ -191,7 +191,7 @@ This tag lets you redeem a coupon.
 ### Remove a coupon
 This tag allows you remove a redeemed coupon from the cart.
 
-```
+```handlebars
 {{ sc:cart:remove }}
   <button type="submit">Remove coupon</button>
 {{ /sc:cart:remove }}
@@ -202,7 +202,7 @@ This tag allows you remove a redeemed coupon from the cart.
 ## Get a customer
 This tag allows you to get a customer by their ID. Remember to provide the `id` parameter which should be the ID of the customer.
 
-```
+```handlebars
 {{ sc:customer id="ff7ddbf2-cd01-4689-a57f-26cb2e7c96f9" }}
   Your name is {{ name }} and your email is {{ email }}.
 {{ /sc:customer }}
@@ -211,7 +211,7 @@ This tag allows you to get a customer by their ID. Remember to provide the `id` 
 ### Update a customer
 This tag allows you to update an existing customer. Remember to provide the `id` parameter which should be the ID of the customer.
 
-```
+```handlebars
 {{ sc:customer:update id="ff7ddbf2-cd01-4689-a57f-26cb2e7c96f9" }}
   <input type="text" name="name">
 {{ /sc:customer:update }}
@@ -220,7 +220,7 @@ This tag allows you to update an existing customer. Remember to provide the `id`
 ### Get orders by customer
 This tag allows you to loop through orders created by a customer. Remember to provide the `customer` parameter which should be the ID of the customer.
 
-```
+```handlebars
 {{ sc:customer:orders customer="ff7ddbf2-cd01-4689-a57f-26cb2e7c96f9" }}
   {{ title }} - {{ grand_total }}
 {{ /sc:customer:orders }}
@@ -229,7 +229,7 @@ This tag allows you to loop through orders created by a customer. Remember to pr
 ### Get order by customer
 This tag allows you to get an order created by a customer. This tag has two parameters. `id` for the ID of the order you want to get and `customer` is the ID of the customer you want to get.
 
-```
+```handlebars
 {{ sc:customer:order customer="ff7ddbf2-cd01-4689-a57f-26cb2e7c96f9" id="84b28c73-3a04-478f-9447-68df026c44fe" }}
   {{ title }} - {{ grand_total }}
 {{ /sc:customer:order }}
@@ -240,7 +240,7 @@ This tag allows you to get an order created by a customer. This tag has two para
 ### All gateways
 This tag returns a loop of the gateways setup for your store.
 
-```
+```handlebars
 {{ sc:gateways }}
   {{ name }}
 {{ /sc:gateways }}
@@ -249,7 +249,7 @@ This tag returns a loop of the gateways setup for your store.
 ### Get a gateway
 This tag lets you get a particular gateway and its information, where `stripe` is the handle of the gateway.
 
-```
+```handlebars
 {{ sc:gateways:stripe }}
   {{ name }}
 {{ /sc:gateways:stripe }}
@@ -259,7 +259,7 @@ This tag lets you get a particular gateway and its information, where `stripe` i
 ### Get Shipping Methods
 This tag can be used to give the user the option to select which shipping method they'd like their order to go through. The tag will loop through all of your configured shipping methods, see if they are available for the order's shipping address and if they are, the details and price will be outputted.
 
-```
+```handlebars
 <select name="shipping_method" value="{{ old:shipping_method }}">
   <option value="" disabled selected>Select a Shipping Method</option>
   {{ sc:shipping:methods }}
@@ -271,7 +271,7 @@ This tag can be used to give the user the option to select which shipping method
 ## Get countries
 This tag lets you loop through countries.
 
-```
+```handlebars
 {{ sc:countries }}
   <option value="{{ iso }}">{{ name }}</option>
 {{ /sc:countries }}
@@ -280,7 +280,7 @@ This tag lets you loop through countries.
 ## Get currencies
 This tag lets you loop through currencies.
 
-```
+```handlebars
 {{ sc:currencies }}
   {{ name }} - {{ symbol }}
 {{ /sc:currencies }}
@@ -291,7 +291,7 @@ If you're dealing with forms built by a Simple Commerce tag, there's a few cool 
 
 Firstly, you can add a `redirect` param so you can redirect your user once they submit the form (and the validation is successful). In this example, the form will redirect to `/cart`.
 
-```
+```handlebars
 {{ sc:cart:addItem redirect="/cart" }}
     <input type="hidden" name="product" value="{{ id }}">
     <input type="hidden" name="quantity" value="1">

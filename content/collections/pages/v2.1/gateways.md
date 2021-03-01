@@ -106,7 +106,7 @@ Usually, the payment form would be on the last step in your checkout flow, insid
 
 The implementation of on-site gateways vary depending on the gateway. However, we've provided a bare-bones example below, showing usage with the built-in Stripe gateway.
 
-```html
+```handlebars
 <div>
     <label for="card-element">Card Details</label>
     <div id="card-element"></div>
@@ -134,14 +134,14 @@ The implementation of on-site gateways vary depending on the gateway. However, w
           	if (result.paymentIntent.status === 'succeeded') {
             	document.getElementById('stripePaymentMethod').value = result.paymentIntent.payment_method
             } else if (result.error) {
-             	// Deal with errors 
+             	// Deal with errors
             }
         })
     }
 </script>
 ```
 
-Inside checkout forms, you can access the gateway's configuration options and anything it returns in it's `prepare` method. 
+Inside checkout forms, you can access the gateway's configuration options and anything it returns in it's `prepare` method.
 
 For example: `{{ gateway-config:key }}` fetches the `key` property from the gateway's config. And the `{{ client_secret }}` is returned from the Stripe Gateway during it's `prepare` method.
 
@@ -151,27 +151,27 @@ If you want to give the customer a choice of how they want to pay (bank transfer
 
 In the below example, we're using Alpine.js to react to the value of the `<select>` element. We'd also recommend splitting the payment forms into their own partials.
 
-```
+```handlebars
 <div x-data="{ gateway: '{{ sc:gateways }}{{ if first }}{{ formatted_class }}{{ /if }}{{ /sc:gateways }}' }">
 	<h2>Secure Payment</h2>
 
-	<select 
-    	x-model="gateway" 
-        class="h-10 w-full border rounded p-2 mb-2 outline-none mr-2" 
+	<select
+    	x-model="gateway"
+        class="h-10 w-full border rounded p-2 mb-2 outline-none mr-2"
         name="gateway"
     >
 		{{ sc:gateways }}
 			<option value="{{ class }}">{{ name }}</option>
 		{{ /sc:gateways }}
 	</select>
-    
+
     {{ sc:gateways }}
 		<div x-show="gateway === '{{ formatted_class }}'">
 			<!-- Payment form partial -->
 		</div>
 	{{ /sc:gateways }}
-    
-    <button 
+
+    <button
     	type="button"
         @click.prevent="if(typeof confirmPayment == 'function' && document.getElementsByName('gateway')[0].value == 'DoubleThreeDigital\\SimpleCommerce\\Gateways\\StripeGateway') { confirmPayment(); } else { document.querySelector('form').submit() }">
         Complete Checkout
@@ -187,11 +187,11 @@ When you want to use an off-site gateway, you can't use the standard `{{ sc:chec
 
 Below is an example of the off-site gateway checkout tag for Mollie. You can obviously change the gateway name and the redirect to work for you.
 
-```
+```handlebars
 {{ sc:checkout:mollie redirect="/thanks" }}
 ```
 
-After the customer completes payment on the off-site gateway they will be redirected back to your store's site. Either to the redirect URL provided or to your store's homepage. 
+After the customer completes payment on the off-site gateway they will be redirected back to your store's site. Either to the redirect URL provided or to your store's homepage.
 
 Behind the scenes, the customer's payment confirmation will be sent via webhooks to your gateway.
 

@@ -16,19 +16,19 @@ We recommend installing Simple Commerce via the command line instead of through 
 
 1. Install Simple Commerce with Composer
 
-```
+```s
 composer require doublethreedigital/simple-commerce:v2.0
 ```
 
 2. Publish Simple Commerce's vendor assets. This will give you our default blueprints, fieldtypes and configuration file.
 
-```
+```s
 php artisan vendor:publish --provider="DoubleThreeDigital\SimpleCommerce\ServiceProvider"
 ```
 
 3. Lastly, you'll need to setup the collections & taxonomies needed for Simple Commerce. You could do this manually or you can use the command that will do it for you.
 
-```
+```s
 php please simple-commerce:setup-content
 ```
 
